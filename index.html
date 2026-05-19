@@ -5,33 +5,35 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Praxis Dr. med. Victoria Yar – Hausärztin Hamburg</title>
-<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome Professional Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 <style>
 
 /* ── RESET ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-–green:        #16653f;
-–green-hover:  #1a7d4d;
-–green-light:  #eaf5f0;
-–green-mid:    #c6dfd2;
-–green-border: #b8d9c8;
-–green-dark:   #0e4229;
-–text-dark:    #0f1c14;
-–text-mid:     #2d4a38;
-–text-soft:    #627a6d;
-–border:       #dde8e2;
-–white:        #ffffff;
-–bg-section:   #f4f8f5;
-–dark-section: #0c1810;
-–dark-2:       #132019;
+–green:       #16653f;
+–green-hover: #1a7d4d;
+–green-light: #e8f5ee;
+–green-border:#c3dece;
+–text-dark:   #111827;
+–text-mid:    #374151;
+–text-soft:   #6b7280;
+–border:      #e5e7eb;
+–white:       #ffffff;
+–bg-section:  #f9fafb;
+–dark-section:#111827;
 }
 
 html { scroll-behavior: smooth; }
 
 body {
-font-family: ‘DM Sans’, sans-serif;
+font-family: ‘Plus Jakarta Sans’, sans-serif;
 background: var(–white);
 color: var(–text-dark);
 overflow-x: hidden;
@@ -42,25 +44,9 @@ overflow-x: hidden;
 ::-webkit-scrollbar-track { background: var(–white); }
 ::-webkit-scrollbar-thumb { background: var(–green-border); border-radius: 3px; }
 
-/* ════════ EMERGENCY BANNER ════════ */
-.emergency-banner {
-background: #7f1d1d;
-color: #fef2f2;
-text-align: center;
-padding: 10px 20px;
-font-size: 13px;
-font-weight: 500;
-letter-spacing: .01em;
-position: relative;
-z-index: 300;
-}
-.emergency-banner strong { font-weight: 700; color: #fca5a5; }
-.emergency-banner a { color: #fca5a5; font-weight: 700; text-decoration: none; }
-.emergency-banner a:hover { text-decoration: underline; }
-
 /* ════════ NAV ════════ */
 nav {
-position: sticky; top: 0; left: 0; right: 0; z-index: 200;
+position: fixed; top: 0; left: 0; right: 0; z-index: 200;
 height: 68px;
 background: rgba(255,255,255,0.97);
 border-bottom: 1px solid var(–border);
@@ -70,35 +56,25 @@ padding: 0 64px;
 backdrop-filter: blur(12px);
 transition: box-shadow .3s;
 }
-nav.scrolled { box-shadow: 0 2px 20px rgba(14,66,41,.08); }
+nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,.07); }
 
 .nav-logo { text-decoration: none; display: flex; align-items: center; gap: 12px; }
 .nav-logo-icon {
 width: 38px; height: 38px; background: var(–green);
 border-radius: 8px; display: flex; align-items: center;
-justify-content: center; color: white; font-size: 17px; flex-shrink: 0;
+justify-content: center; color: white; font-size: 16px; flex-shrink: 0;
 }
 .nav-logo-name { font-size: 14px; font-weight: 700; color: var(–text-dark); letter-spacing: -.01em; line-height: 1.25; }
 .nav-logo-sub  { font-size: 11px; font-weight: 400; color: var(–text-soft); letter-spacing: .02em; }
 
 .nav-links { display: flex; gap: 32px; list-style: none; }
-.nav-links a {
-font-size: 14px; font-weight: 500; color: var(–text-soft); text-decoration: none;
-transition: color .2s; position: relative; padding-bottom: 4px;
-}
-.nav-links a::after {
-content: ‘’; position: absolute; bottom: -2px; left: 0; right: 0;
-height: 2px; background: var(–green); border-radius: 2px;
-transform: scaleX(0); transition: transform .25s ease;
-}
-.nav-links a:hover, .nav-links a.active { color: var(–green); }
-.nav-links a:hover::after, .nav-links a.active::after { transform: scaleX(1); }
+.nav-links a { font-size: 14px; font-weight: 500; color: var(–text-mid); text-decoration: none; transition: color .2s; }
+.nav-links a:hover { color: var(–green); }
 
 .nav-cta {
-padding: 10px 22px; background: var(–green); color: #fff;
-font-size: 13px; font-weight: 600; border-radius: 6px;
-text-decoration: none; transition: background .2s, transform .15s;
-display: flex; align-items: center; gap: 7px;
+padding: 10px 24px; background: var(–green); color: #fff;
+font-size: 13px; font-weight: 700; border-radius: 6px;
+text-decoration: none; transition: background .2s, transform .2s;
 }
 .nav-cta:hover { background: var(–green-hover); transform: translateY(-1px); }
 
@@ -107,84 +83,65 @@ display: flex; align-items: center; gap: 7px;
 
 /* ════════ HERO ════════ */
 #hero {
-min-height: calc(100vh - 68px - 40px);
-display: grid; grid-template-columns: 55fr 45fr;
+min-height: 100vh; padding-top: 68px;
+display: grid; grid-template-columns: 1fr 1fr;
 background: var(–white);
 }
 .hero-left {
-padding: 72px 52px 72px 80px;
+padding: 80px 56px 80px 80px;
 display: flex; flex-direction: column; justify-content: center;
-position: relative;
 }
-
-/* subtle dot grid background */
-.hero-left::before {
-content: ‘’;
-position: absolute; inset: 0;
-background-image: radial-gradient(circle, var(–green-border) 1px, transparent 1px);
-background-size: 28px 28px;
-opacity: .25;
-pointer-events: none;
-}
-
 .hero-eyebrow {
 display: inline-flex; align-items: center; gap: 8px;
 background: var(–green-light); color: var(–green);
-font-size: 11.5px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase;
+font-size: 12px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase;
 padding: 6px 14px; border-radius: 20px; margin-bottom: 28px; width: fit-content;
-border: 1px solid var(–green-border);
 opacity: 0; animation: fadeUp .6s .1s forwards;
-position: relative; z-index: 1;
 }
 .hero-h1 {
-font-family: ‘Lora’, serif;
-font-size: clamp(38px, 4.5vw, 60px); font-weight: 700; line-height: 1.1;
+font-family: ‘Playfair Display’, serif;
+font-size: clamp(40px, 5vw, 64px); font-weight: 700; line-height: 1.1;
 color: var(–text-dark); margin-bottom: 24px;
 opacity: 0; animation: fadeUp .6s .2s forwards;
-position: relative; z-index: 1;
 }
-.hero-h1 em { color: var(–green); font-style: italic; }
+.hero-h1 span { color: var(–green); }
 .hero-desc {
-font-size: 16.5px; font-weight: 400; line-height: 1.85; color: var(–text-soft);
-max-width: 440px; margin-bottom: 40px;
+font-size: 17px; font-weight: 400; line-height: 1.8; color: var(–text-mid);
+max-width: 460px; margin-bottom: 40px;
 opacity: 0; animation: fadeUp .6s .3s forwards;
-position: relative; z-index: 1;
 }
 .hero-buttons {
-display: flex; gap: 12px; flex-wrap: wrap;
+display: flex; gap: 14px; flex-wrap: wrap;
 opacity: 0; animation: fadeUp .6s .4s forwards;
-position: relative; z-index: 1;
 }
 .btn-green {
-padding: 13px 28px; background: var(–green); color: #fff;
-font-size: 14px; font-weight: 600; border-radius: 7px; text-decoration: none;
+padding: 14px 32px; background: var(–green); color: #fff;
+font-size: 14px; font-weight: 700; border-radius: 6px; text-decoration: none;
 border: 2px solid var(–green);
-transition: background .2s, transform .15s, box-shadow .2s;
+transition: background .2s, transform .15s;
 display: inline-flex; align-items: center; gap: 8px;
-box-shadow: 0 4px 14px rgba(22,101,63,.3);
 }
-.btn-green:hover { background: var(–green-hover); border-color: var(–green-hover); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(22,101,63,.35); }
+.btn-green:hover { background: var(–green-hover); border-color: var(–green-hover); transform: translateY(-2px); }
 .btn-ghost {
-padding: 13px 28px; background: transparent; color: var(–text-dark);
-font-size: 14px; font-weight: 600; border-radius: 7px; text-decoration: none;
+padding: 14px 32px; background: transparent; color: var(–text-dark);
+font-size: 14px; font-weight: 600; border-radius: 6px; text-decoration: none;
 border: 2px solid var(–border); transition: border-color .2s, color .2s, transform .15s;
 display: inline-flex; align-items: center; gap: 8px;
 }
 .btn-ghost:hover { border-color: var(–green); color: var(–green); transform: translateY(-2px); }
 
 .hero-stats {
-display: flex; gap: 40px; margin-top: 52px; padding-top: 28px;
+display: flex; gap: 40px; margin-top: 56px; padding-top: 32px;
 border-top: 1px solid var(–border);
 opacity: 0; animation: fadeUp .6s .5s forwards;
-position: relative; z-index: 1;
 }
 .hero-stat-value {
-font-family: ‘Lora’, serif;
-font-size: 30px; font-weight: 700; color: var(–text-dark); line-height: 1;
+font-family: ‘Playfair Display’, serif;
+font-size: 32px; font-weight: 700; color: var(–text-dark); line-height: 1;
 }
 .hero-stat-label {
-font-size: 11px; font-weight: 500; color: var(–text-soft);
-margin-top: 5px; text-transform: uppercase; letter-spacing: .06em;
+font-size: 12px; font-weight: 500; color: var(–text-soft);
+margin-top: 5px; text-transform: uppercase; letter-spacing: .05em;
 }
 
 /* Hero Right */
@@ -193,49 +150,25 @@ background: var(–green-light); position: relative; overflow: hidden;
 display: flex; align-items: center; justify-content: center;
 opacity: 0; animation: fadeIn .8s .25s forwards;
 }
-
-/* organic blob shapes */
-.hero-right::before {
-content: ‘’;
-position: absolute;
-width: 500px; height: 500px;
-background: radial-gradient(ellipse, rgba(22,101,63,.12) 0%, transparent 70%);
-top: -100px; right: -100px;
-pointer-events: none;
+.hero-right-bg {
+position: absolute; font-size: 480px; font-weight: 700;
+color: rgba(22,101,63,.06); line-height: 1;
+top: 50%; left: 50%; transform: translate(-50%,-50%);
+user-select: none; pointer-events: none;
 }
-.hero-right::after {
-content: ‘’;
-position: absolute;
-width: 300px; height: 300px;
-background: radial-gradient(ellipse, rgba(22,101,63,.08) 0%, transparent 70%);
-bottom: 20px; left: 20px;
-pointer-events: none;
-}
-
 .hero-photo-box {
-width: 248px; height: 328px; background: white; border-radius: 14px;
-box-shadow: 0 24px 64px rgba(22,101,63,.18), 0 4px 12px rgba(22,101,63,.08);
+width: 260px; height: 340px; background: white; border-radius: 12px;
+box-shadow: 0 24px 64px rgba(22,101,63,.15), 0 4px 12px rgba(22,101,63,.08);
 display: flex; align-items: center; justify-content: center;
 flex-direction: column; gap: 10px;
 color: var(–text-soft); font-size: 13px; font-weight: 500; position: relative; z-index: 2;
-border: 1px solid rgba(22,101,63,.1);
 }
-.hero-photo-icon { font-size: 40px; opacity: .2; }
-.hero-photo-box span { font-size: 12px; color: var(–text-soft); opacity: .7; }
-
-/* decorative cross pattern */
-.hero-cross {
-position: absolute; font-size: 320px; font-weight: 800;
-color: rgba(22,101,63,.05); line-height: 1;
-top: 50%; left: 50%; transform: translate(-50%,-50%);
-user-select: none; pointer-events: none; z-index: 1;
-font-family: ‘Lora’, serif;
-}
+.hero-photo-icon { font-size: 44px; opacity: .3; }
 
 .hero-info-card {
 position: absolute; bottom: 32px; left: 24px;
-background: var(–white); border-radius: 12px; padding: 16px 20px;
-box-shadow: 0 8px 32px rgba(0,0,0,.1); min-width: 218px; z-index: 3;
+background: var(–white); border-radius: 10px; padding: 16px 20px;
+box-shadow: 0 8px 32px rgba(0,0,0,.1); min-width: 210px; z-index: 3;
 border-left: 3px solid var(–green);
 animation: slideUp .6s .65s both;
 }
@@ -245,12 +178,12 @@ text-transform: uppercase; color: var(–green); margin-bottom: 10px;
 }
 .hero-info-row {
 display: flex; justify-content: space-between; gap: 12px;
-font-size: 12px; color: var(–text-soft); margin: 5px 0;
+font-size: 12px; color: var(–text-mid); margin: 4px 0;
 }
 .hero-info-row span:last-child { font-weight: 700; color: var(–text-dark); }
 .online-dot {
-position: absolute; top: -5px; right: -5px;
-width: 13px; height: 13px; background: #22c55e;
+position: absolute; top: -6px; right: -6px;
+width: 14px; height: 14px; background: #22c55e;
 border-radius: 50%; border: 2px solid white;
 }
 .online-dot::after {
@@ -261,19 +194,19 @@ animation: ripple 2s infinite;
 .hero-doctolib-pill {
 position: absolute; top: 36px; right: 24px;
 background: white; border-radius: 10px; padding: 12px 16px;
-box-shadow: 0 4px 20px rgba(0,0,0,.1);
+box-shadow: 0 4px 20px rgba(0,0,0,.09);
 display: flex; align-items: center; gap: 10px; z-index: 3;
 animation: slideDown .6s .75s both;
 }
 .pill-dot { width: 10px; height: 10px; background: #0596D5; border-radius: 50%; flex-shrink: 0; }
-.pill-text { font-size: 12px; color: var(–text-soft); line-height: 1.4; }
+.pill-text { font-size: 12px; color: var(–text-soft); line-height: 1.35; }
 .pill-text strong { display: block; font-size: 13px; font-weight: 700; color: var(–text-dark); }
 
 /* ════════ SECTIONS ════════ */
 .section-wrap { padding: 96px 80px; }
-.bg-white  { background: var(–white); }
-.bg-gray   { background: var(–bg-section); }
-.bg-dark   { background: var(–dark-section); }
+.bg-white      { background: var(–white); }
+.bg-gray       { background: var(–bg-section); }
+.bg-dark       { background: var(–dark-section); }
 
 .section-eyebrow {
 display: inline-flex; align-items: center; gap: 8px;
@@ -285,19 +218,19 @@ text-transform: uppercase; color: var(–green); margin-bottom: 14px;
 .section-eyebrow.light::before { background: #86efac; }
 
 .section-title {
-font-family: ‘Lora’, serif;
+font-family: ‘Playfair Display’, serif;
 font-size: clamp(28px, 3.5vw, 42px); font-weight: 700; line-height: 1.15;
 color: var(–text-dark); margin-bottom: 16px;
 }
 .section-title.on-dark { color: #ffffff; }
-.section-title em { color: var(–green); font-style: italic; }
-.section-title.on-dark em { color: #86efac; }
+.section-title span { color: var(–green); }
+.section-title.on-dark span { color: #86efac; }
 
 .section-sub {
-font-size: 16px; font-weight: 400; line-height: 1.8;
+font-size: 16px; font-weight: 400; line-height: 1.75;
 color: var(–text-soft); max-width: 560px;
 }
-.section-sub.on-dark { color: #6b9f82; }
+.section-sub.on-dark { color: #9ca3af; }
 
 /* ════════ LEISTUNGEN ════════ */
 .leistungen-header { margin-bottom: 52px; }
@@ -305,27 +238,18 @@ color: var(–text-soft); max-width: 560px;
 
 .leistung-card {
 background: var(–white); border: 1px solid var(–border); border-radius: 12px;
-padding: 32px 28px; transition: box-shadow .3s, border-color .3s, transform .25s;
-cursor: default; position: relative; overflow: hidden;
-}
-.leistung-card::before {
-content: ‘’;
-position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
-background: linear-gradient(90deg, var(–green), var(–green-hover));
-transform: scaleX(0); transform-origin: left;
-transition: transform .35s ease;
+padding: 32px 28px; transition: box-shadow .3s, border-color .3s, transform .25s; cursor: default;
 }
 .leistung-card:hover { box-shadow: 0 12px 40px rgba(22,101,63,.1); border-color: var(–green-border); transform: translateY(-4px); }
-.leistung-card:hover::before { transform: scaleX(1); }
-.leistung-num { font-size: 11px; font-weight: 700; letter-spacing: .1em; color: #c8d8cc; text-transform: uppercase; margin-bottom: 16px; }
+.leistung-num { font-size: 11px; font-weight: 700; letter-spacing: .1em; color: #d1d5db; text-transform: uppercase; margin-bottom: 16px; }
 .leistung-icon-wrap {
 width: 48px; height: 48px; border-radius: 10px;
 background: var(–green-light); display: flex; align-items: center;
-justify-content: center; font-size: 24px; margin-bottom: 18px;
-border: 1px solid var(–green-border);
+justify-content: center; font-size: 20px; margin-bottom: 18px;
+color: var(–green);
 }
-.leistung-title { font-size: 16px; font-weight: 600; color: var(–text-dark); margin-bottom: 10px; line-height: 1.3; }
-.leistung-desc { font-size: 14px; font-weight: 400; line-height: 1.7; color: var(–text-soft); }
+.leistung-title { font-size: 16px; font-weight: 700; color: var(–text-dark); margin-bottom: 10px; line-height: 1.3; }
+.leistung-desc { font-size: 14px; font-weight: 400; line-height: 1.65; color: var(–text-soft); }
 
 /* ════════ ÜBER MICH ════════ */
 .ueber-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
@@ -333,35 +257,33 @@ border: 1px solid var(–green-border);
 .ueber-photo-wrap { position: relative; }
 .ueber-photo-frame {
 width: 100%; aspect-ratio: 4/5;
-background: linear-gradient(160deg, var(–green-light) 0%, #c8dfd2 100%);
+background: linear-gradient(160deg, var(–green-light) 0%, #d1ead9 100%);
 border-radius: 16px; display: flex; align-items: center; justify-content: center;
 flex-direction: column; gap: 12px; color: var(–text-soft); font-size: 14px; font-weight: 500;
-position: relative; overflow: hidden; box-shadow: 0 20px 60px rgba(22,101,63,.14);
-border: 1px solid var(–green-border);
+position: relative; overflow: hidden; box-shadow: 0 20px 60px rgba(22,101,63,.12);
 }
-.ueber-frame-icon { font-size: 56px; opacity: .18; }
+.ueber-frame-icon { font-size: 56px; opacity: .2; }
 .ueber-accent-box {
 position: absolute; bottom: -16px; right: -16px;
-width: 112px; height: 112px; background: var(–green); border-radius: 14px;
+width: 110px; height: 110px; background: var(–green); border-radius: 12px;
 display: flex; align-items: center; justify-content: center; flex-direction: column; text-align: center; padding: 12px;
-box-shadow: 0 8px 24px rgba(22,101,63,.4);
 }
-.ueber-accent-num { font-family: ‘Lora’, serif; font-size: 28px; font-weight: 700; color: #fff; line-height: 1; }
+.ueber-accent-num { font-family: ‘Playfair Display’, serif; font-size: 28px; font-weight: 700; color: #fff; line-height: 1; }
 .ueber-accent-label { font-size: 10px; font-weight: 600; color: rgba(255,255,255,.75); letter-spacing: .05em; text-transform: uppercase; margin-top: 4px; line-height: 1.3; }
 
-.ueber-intro { font-size: 16px; font-weight: 400; line-height: 1.85; color: var(–text-mid); margin-bottom: 32px; }
+.ueber-intro { font-size: 16px; font-weight: 400; line-height: 1.8; color: var(–text-mid); margin-bottom: 32px; }
 
-.qual-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
+.qual-list { display: flex; flex-direction: column; gap: 12px; margin-bottom: 28px; }
 .qual-item {
-display: flex; gap: 14px; align-items: flex-start; padding: 16px 18px;
+display: flex; gap: 16px; align-items: flex-start; padding: 18px 20px;
 background: var(–bg-section); border-radius: 10px; border: 1px solid var(–border);
-transition: border-color .2s, background .2s;
+transition: border-color .2s;
 }
-.qual-item:hover { border-color: var(–green-border); background: var(–green-light); }
+.qual-item:hover { border-color: var(–green-border); }
 .qual-icon {
-width: 38px; height: 38px; flex-shrink: 0; background: var(–white);
-border-radius: 8px; display: flex; align-items: center; justify-content: center;
-font-size: 18px; border: 1px solid var(–border);
+width: 40px; height: 40px; flex-shrink: 0; background: var(–green-light);
+border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 18px;
+color: var(–green);
 }
 .qual-title { font-size: 14px; font-weight: 700; color: var(–text-dark); margin-bottom: 3px; }
 .qual-sub   { font-size: 13px; color: var(–text-soft); }
@@ -378,122 +300,112 @@ font-size: 12px; font-weight: 600; color: var(–green); border: 1px solid var(�
 .hours-list { margin-top: 8px; }
 .hours-item {
 display: flex; justify-content: space-between; align-items: center;
-padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,.06);
+padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,.07);
 }
-.hours-item:first-child { border-top: 1px solid rgba(255,255,255,.06); }
-.hours-day  { font-size: 15px; font-weight: 400; color: #7a9f8a; }
-.hours-time { font-size: 15px; font-weight: 700; color: #f0faf4; }
-.hours-time.closed { color: #3d5a47; font-weight: 400; font-style: italic; }
+.hours-item:first-child { border-top: 1px solid rgba(255,255,255,.07); }
+.hours-day  { font-size: 15px; font-weight: 400; color: #9ca3af; }
+.hours-time { font-size: 15px; font-weight: 700; color: #f9fafb; }
+.hours-time.closed { color: #4b5563; font-weight: 400; font-style: italic; }
 .hours-dot  { width: 8px; height: 8px; border-radius: 50%; background: #22c55e; flex-shrink: 0; }
-.hours-dot.off { background: #2d4a38; }
+.hours-dot.off { background: #374151; }
 
-.contact-col { display: flex; flex-direction: column; gap: 12px; }
+.contact-col { display: flex; flex-direction: column; gap: 14px; }
 .contact-box {
-background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.07);
-border-radius: 12px; padding: 18px 20px; display: flex; gap: 14px; align-items: center;
+background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.08);
+border-radius: 12px; padding: 20px 22px; display: flex; gap: 16px; align-items: center;
 transition: background .25s, border-color .25s;
 }
-.contact-box:hover { background: rgba(255,255,255,.07); border-color: rgba(134,239,172,.18); }
+.contact-box:hover { background: rgba(255,255,255,.08); border-color: rgba(134,239,172,.2); }
 .contact-box-icon {
-width: 42px; height: 42px; flex-shrink: 0; background: rgba(22,101,63,.35);
-border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 19px;
+width: 44px; height: 44px; flex-shrink: 0; background: rgba(22,101,63,.4);
+border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px;
+color: #86efac;
 }
-.contact-box-label { font-size: 10px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #86efac; margin-bottom: 4px; }
+.contact-box-label { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #86efac; margin-bottom: 4px; }
 .contact-box-value { font-size: 16px; font-weight: 700; color: #ffffff; }
-.contact-box-sub   { font-size: 12px; color: #4a7a5c; margin-top: 2px; }
-
-.contact-box-value a {
-color: #ffffff; text-decoration: none; transition: color .2s;
-}
-.contact-box-value a:hover { color: #86efac; }
+.contact-box-sub   { font-size: 12px; color: #6b7280; margin-top: 2px; }
 
 .doctolib-link {
 display: flex; align-items: center; gap: 14px;
-background: #0596D5; color: white; padding: 17px 22px;
-border-radius: 10px; text-decoration: none; font-size: 14px; font-weight: 600;
-transition: opacity .2s, transform .2s, box-shadow .2s; margin-top: 4px;
-box-shadow: 0 4px 16px rgba(5,150,213,.3);
+background: #0596D5; color: white; padding: 18px 22px;
+border-radius: 10px; text-decoration: none; font-size: 14px; font-weight: 700;
+transition: opacity .2s, transform .2s; margin-top: 4px;
 }
-.doctolib-link:hover { opacity: .92; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(5,150,213,.4); }
+.doctolib-link:hover { opacity: .92; transform: translateY(-2px); }
 .doctolib-link-icon {
-width: 38px; height: 38px; background: rgba(255,255,255,.2);
+width: 40px; height: 40px; background: rgba(255,255,255,.2);
 border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0;
 }
 
 /* ════════ ANFAHRT ════════ */
 .anfahrt-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; margin-top: 52px; align-items: start; }
 
-.map-box {
-border-radius: 14px; overflow: hidden; border: 1px solid var(–border);
-aspect-ratio: 4/3;
-box-shadow: 0 8px 32px rgba(22,101,63,.1);
+.map-embed {
+width: 100%;
+height: 360px;
+border-radius: 12px;
+overflow: hidden;
+border: 1px solid var(–border);
+box-shadow: 0 8px 28px rgba(0,0,0,.06);
 }
-.map-box iframe { width: 100%; height: 100%; display: block; border: none; }
 
-.anfahrt-items { display: flex; flex-direction: column; gap: 12px; }
+.map-embed iframe {
+width: 100%;
+height: 100%;
+border: 0;
+}
+
+.anfahrt-items { display: flex; flex-direction: column; gap: 14px; }
 .anfahrt-item {
-display: flex; gap: 14px; padding: 18px 20px;
+display: flex; gap: 16px; padding: 20px 22px;
 background: var(–white); border: 1px solid var(–border); border-radius: 10px;
-transition: border-color .2s, box-shadow .2s, background .2s;
+transition: border-color .2s, box-shadow .2s;
 }
-.anfahrt-item:hover { border-color: var(–green-border); box-shadow: 0 4px 16px rgba(22,101,63,.07); background: var(–green-light); }
+.anfahrt-item:hover { border-color: var(–green-border); box-shadow: 0 4px 16px rgba(22,101,63,.07); }
 .anfahrt-item-icon {
-width: 40px; height: 40px; flex-shrink: 0; background: var(–green-light);
-border-radius: 8px; display: flex; align-items: center; justify-content: center;
-font-size: 18px; border: 1px solid var(–green-border);
+width: 42px; height: 42px; flex-shrink: 0; background: var(–green-light);
+border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 18px;
+color: var(–green);
 }
-.anfahrt-item-title { font-size: 12px; font-weight: 700; color: var(–green); text-transform: uppercase; letter-spacing: .07em; margin-bottom: 5px; }
+.anfahrt-item-title { font-size: 13px; font-weight: 700; color: var(–text-dark); text-transform: uppercase; letter-spacing: .05em; margin-bottom: 5px; }
 .anfahrt-item-text  { font-size: 14px; color: var(–text-soft); line-height: 1.6; }
-.access-chips { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; }
-.access-chip  { padding: 3px 10px; border-radius: 4px; background: var(–green-light); font-size: 11px; font-weight: 600; color: var(–green); border: 1px solid var(–green-border); }
-
-.map-open-btn {
-display: inline-flex; align-items: center; gap: 8px;
-margin-top: 12px; padding: 10px 20px;
-background: var(–green); color: white; border-radius: 7px;
-text-decoration: none; font-size: 13px; font-weight: 600;
-transition: background .2s, transform .15s;
-}
-.map-open-btn:hover { background: var(–green-hover); transform: translateY(-1px); }
 
 /* ════════ FOOTER ════════ */
 footer { background: var(–dark-section); padding: 48px 80px 28px; }
 .footer-top {
 display: flex; justify-content: space-between; align-items: flex-start;
-padding-bottom: 28px; border-bottom: 1px solid rgba(255,255,255,.07);
+padding-bottom: 28px; border-bottom: 1px solid rgba(255,255,255,.08);
 margin-bottom: 24px; gap: 40px; flex-wrap: wrap;
 }
-.footer-brand-name { font-family: ‘Lora’, serif; font-size: 18px; font-weight: 600; color: #fff; }
-.footer-brand-sub  { font-size: 12px; color: #3d6649; margin-top: 4px; }
+.footer-brand-name { font-family: ‘Playfair Display’, serif; font-size: 17px; font-weight: 700; color: #fff; }
+.footer-brand-sub  { font-size: 12px; color: #6b7280; margin-top: 4px; }
 .footer-links { display: flex; gap: 28px; flex-wrap: wrap; align-items: center; }
-.footer-links a { font-size: 13px; color: #3d6649; text-decoration: none; transition: color .2s; }
+.footer-links a { font-size: 13px; color: #6b7280; text-decoration: none; transition: color .2s; }
 .footer-links a:hover { color: #86efac; }
 .footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
-.footer-copy { font-size: 12px; color: #2d4a38; }
-.footer-note { font-size: 11px; color: #253d2d; text-align: right; line-height: 1.6; }
+.footer-copy { font-size: 12px; color: #4b5563; }
+.footer-note { font-size: 11px; color: #374151; text-align: right; line-height: 1.6; }
 
 /* ════════ ANIMATIONS ════════ */
-@keyframes fadeUp    { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
-@keyframes fadeIn    { from { opacity:0; }                             to { opacity:1; } }
-@keyframes slideUp   { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
-@keyframes slideDown { from { opacity:0; transform:translateY(-16px); } to { opacity:1; transform:translateY(0); } }
-@keyframes ripple    { 0%,100%{ transform:scale(1); opacity:.5; } 50%{ transform:scale(1.8); opacity:0; } }
+@keyframes fadeUp   { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+@keyframes fadeIn   { from { opacity:0; }                             to { opacity:1; } }
+@keyframes slideUp  { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
+@keyframes slideDown{ from { opacity:0; transform:translateY(-16px); } to { opacity:1; transform:translateY(0); } }
+@keyframes ripple   { 0%,100%{ transform:scale(1); opacity:.5; } 50%{ transform:scale(1.8); opacity:0; } }
 
 .reveal { opacity:0; transform:translateY(24px); transition: opacity .65s ease, transform .65s ease; }
 .reveal.visible { opacity:1; transform:none; }
 
 /* ════════ RESPONSIVE ════════ */
-@media (max-width: 1100px) {
+@media (max-width: 1024px) {
 nav { padding: 0 32px; }
 .section-wrap { padding: 72px 40px; }
+#hero { grid-template-columns: 1fr; }
 .hero-left { padding: 60px 40px; }
+.hero-right { min-height: 420px; }
 .leistungen-grid { grid-template-columns: repeat(2, 1fr); }
 .ueber-grid, .sprechzeiten-grid, .anfahrt-grid { grid-template-columns: 1fr; gap: 40px; }
 footer { padding: 48px 40px 28px; }
-}
-@media (max-width: 860px) {
-#hero { grid-template-columns: 1fr; }
-.hero-right { min-height: 380px; }
 }
 @media (max-width: 640px) {
 nav { padding: 0 20px; }
@@ -507,57 +419,30 @@ footer { padding: 40px 20px 24px; }
 .footer-top { flex-direction: column; }
 .footer-bottom { flex-direction: column; text-align: center; }
 .footer-note { text-align: center; }
-.map-box { aspect-ratio: 3/2; }
 }
-
-/* Mobile nav overlay */
-.nav-mobile-open {
-display: flex !important;
-flex-direction: column;
-position: fixed;
-top: 68px; left: 0; right: 0;
-background: rgba(255,255,255,.98);
-padding: 20px 24px;
-gap: 20px;
-border-bottom: 1px solid var(–border);
-z-index: 199;
-box-shadow: 0 8px 32px rgba(0,0,0,.1);
-backdrop-filter: blur(12px);
-}
-.nav-mobile-open a {
-font-size: 16px !important;
-padding: 8px 0;
-border-bottom: 1px solid var(–border);
-}
-
 </style>
+
 </head>
 <body>
-
-<!-- ══ EMERGENCY BANNER ══ -->
-
-<div class="emergency-banner">
-  🚨 <strong>Notfall?</strong> Bitte wählen Sie den Notruf <a href="tel:112">112</a> oder den ärztlichen Bereitschaftsdienst <a href="tel:116117">116 117</a>
-</div>
 
 <!-- ══ NAV ══ -->
 
 <nav id="navbar">
   <a class="nav-logo" href="#">
-    <div class="nav-logo-icon">⚕</div>
+    <div class="nav-logo-icon"><i class="fa-solid fa-heart-pulse"></i></div>
     <div>
       <div class="nav-logo-name">Dr. med. Victoria Yar</div>
       <div class="nav-logo-sub">Hausärztin · Hamburg</div>
     </div>
   </a>
-  <ul class="nav-links" id="navLinks">
+  <ul class="nav-links">
     <li><a href="#leistungen">Leistungen</a></li>
     <li><a href="#ueber">Über mich</a></li>
     <li><a href="#sprechzeiten">Sprechzeiten</a></li>
     <li><a href="#anfahrt">Anfahrt</a></li>
   </ul>
-  <a class="nav-cta" href="https://www.doctolib.de/einzelpraxis/hamburg/hausarztpraxis-yar-victoria" target="_blank">📅 Termin buchen</a>
-  <div class="nav-hamburger" id="hamburger" onclick="toggleMenu()">
+  <a class="nav-cta" href="https://www.doctolib.de/einzelpraxis/hamburg/hausarztpraxis-yar-victoria" target="_blank">Termin buchen</a>
+  <div class="nav-hamburger" onclick="toggleMenu(this)">
     <span></span><span></span><span></span>
   </div>
 </nav>
@@ -566,15 +451,17 @@ border-bottom: 1px solid var(–border);
 
 <section id="hero">
   <div class="hero-left">
-    <div class="hero-eyebrow">🏥 Hausarztpraxis · Hamburg Barmbek</div>
-    <h1 class="hero-h1">Ihre Gesundheit<br>in <em>guten Händen.</em></h1>
+    <div class="hero-eyebrow"><i class="fa-solid fa-hospital"></i> Hausarztpraxis · Hamburg Barmbek</div>
+    <h1 class="hero-h1">Ihre Gesundheit<br>in <span>guten Händen.</span></h1>
     <p class="hero-desc">
       Dr. med. Victoria Yar – Fachärztin für Allgemeinmedizin in Hamburg.
       Persönliche, ganzheitliche Betreuung für die gesamte Familie –
       von der Vorsorge bis zur spezialisierten Behandlung.
     </p>
     <div class="hero-buttons">
-      <a class="btn-green" href="https://www.doctolib.de/einzelpraxis/hamburg/hausarztpraxis-yar-victoria" target="_blank">📅 Online Termin buchen</a>
+      <a class="btn-green" href="https://www.doctolib.de/einzelpraxis/hamburg/hausarztpraxis-yar-victoria" target="_blank">
+        <i class="fa-solid fa-calendar-check"></i> Online Termin buchen
+      </a>
       <a class="btn-ghost" href="#leistungen">Unsere Leistungen →</a>
     </div>
     <div class="hero-stats">
@@ -593,17 +480,17 @@ border-bottom: 1px solid var(–border);
     </div>
   </div>
   <div class="hero-right">
-    <div class="hero-cross">+</div>
+    <div class="hero-right-bg">+</div>
     <div class="hero-photo-box">
-      <div class="hero-photo-icon">⚕</div>
+      <div class="hero-photo-icon"><i class="fa-solid fa-user-doctor"></i></div>
       <span>Foto der Ärztin</span>
     </div>
     <div class="hero-info-card">
       <div class="online-dot"></div>
       <div class="hero-info-label">Sprechzeiten</div>
-      <div class="hero-info-row"><span>Mo</span><span>08:30 – 18:00</span></div>
-      <div class="hero-info-row"><span>Di &amp; Do</span><span>08:30 – 17:30</span></div>
-      <div class="hero-info-row"><span>Mi &amp; Fr</span><span>08:30 – 12:00</span></div>
+      <div class="hero-info-row"><span>Mo, Di, Do</span><span>08:30–12:00</span></div>
+      <div class="hero-info-row"><span></span><span>15:00–17:30</span></div>
+      <div class="hero-info-row"><span>Mi & Fr</span><span>08:30–12:00</span></div>
     </div>
     <div class="hero-doctolib-pill">
       <div class="pill-dot"></div>
@@ -618,43 +505,43 @@ border-bottom: 1px solid var(–border);
   <div class="section-wrap bg-gray">
     <div class="leistungen-header reveal">
       <div class="section-eyebrow">Was wir anbieten</div>
-      <h2 class="section-title">Unsere <em>Leistungen</em></h2>
+      <h2 class="section-title">Unsere <span>Leistungen</span></h2>
       <p class="section-sub">Umfassende medizinische Betreuung unter einem Dach – individuell, ganzheitlich und auf dem neuesten Stand der Wissenschaft.</p>
     </div>
     <div class="leistungen-grid">
       <div class="leistung-card reveal" style="transition-delay:.05s">
         <div class="leistung-num">01</div>
-        <div class="leistung-icon-wrap">🩺</div>
+        <div class="leistung-icon-wrap"><i class="fa-solid fa-stethoscope"></i></div>
         <div class="leistung-title">Allgemeinmedizin</div>
         <p class="leistung-desc">Erste Anlaufstelle für alle gesundheitlichen Anliegen. Individuelle und ganzheitliche Beratung für die gesamte Familie.</p>
       </div>
       <div class="leistung-card reveal" style="transition-delay:.1s">
         <div class="leistung-num">02</div>
-        <div class="leistung-icon-wrap">🔬</div>
+        <div class="leistung-icon-wrap"><i class="fa-solid fa-microscope"></i></div>
         <div class="leistung-title">Vorsorge &amp; Check-ups</div>
         <p class="leistung-desc">Regelmäßige Gesundheitsuntersuchungen und Früherkennungsmaßnahmen – Prävention steht bei uns im Vordergrund.</p>
       </div>
       <div class="leistung-card reveal" style="transition-delay:.15s">
         <div class="leistung-num">03</div>
-        <div class="leistung-icon-wrap">💉</div>
+        <div class="leistung-icon-wrap"><i class="fa-solid fa-syringe"></i></div>
         <div class="leistung-title">Impfungen</div>
         <p class="leistung-desc">Standard- und Reiseimpfungen für Kinder und Erwachsene. Umfassende Beratung zu allen empfohlenen Impfungen.</p>
       </div>
       <div class="leistung-card reveal" style="transition-delay:.2s">
         <div class="leistung-num">04</div>
-        <div class="leistung-icon-wrap">🌿</div>
+        <div class="leistung-icon-wrap"><i class="fa-solid fa-leaf"></i></div>
         <div class="leistung-title">Akupunktur</div>
         <p class="leistung-desc">Ganzheitliche Therapie bei Schmerzen, Migräne, Allergien und Stress. Traditionelle Heilmethode, modern eingesetzt.</p>
       </div>
       <div class="leistung-card reveal" style="transition-delay:.25s">
         <div class="leistung-num">05</div>
-        <div class="leistung-icon-wrap">✈️</div>
+        <div class="leistung-icon-wrap"><i class="fa-solid fa-plane"></i></div>
         <div class="leistung-title">Reiseimpfberatung</div>
         <p class="leistung-desc">Individuelle Beratung und Impfungen für Ihre Reise ins Ausland – als Selbstzahlerleistung mit umfassendem Reiseschutz.</p>
       </div>
       <div class="leistung-card reveal" style="transition-delay:.3s">
         <div class="leistung-num">06</div>
-        <div class="leistung-icon-wrap">🩸</div>
+        <div class="leistung-icon-wrap"><i class="fa-solid fa-droplet"></i></div>
         <div class="leistung-title">Transfusionsmedizin</div>
         <p class="leistung-desc">Fachärztliche Expertise in der Transfusionsmedizin als ergänzende Spezialisierung zu unserer hausärztlichen Tätigkeit.</p>
       </div>
@@ -669,7 +556,7 @@ border-bottom: 1px solid var(–border);
     <div class="ueber-grid">
       <div class="ueber-photo-wrap reveal">
         <div class="ueber-photo-frame">
-          <div class="ueber-frame-icon">⚕</div>
+          <div class="ueber-frame-icon"><i class="fa-solid fa-user-doctor"></i></div>
           <span>Foto der Ärztin</span>
         </div>
         <div class="ueber-accent-box">
@@ -679,7 +566,7 @@ border-bottom: 1px solid var(–border);
       </div>
       <div class="reveal" style="transition-delay:.15s">
         <div class="section-eyebrow">Über die Ärztin</div>
-        <h2 class="section-title">Dr. med. (univ.)<br><em>Victoria Yar</em></h2>
+        <h2 class="section-title">Dr. med. (univ.)<br><span>Victoria Yar</span></h2>
         <p class="ueber-intro">
           Als Fachärztin für Allgemeinmedizin und Transfusionsmedizin begleite ich meine Patientinnen
           und Patienten mit Kompetenz und echtem Engagement. Mein Ziel ist es, Ihre Gesundheit in jeder
@@ -687,37 +574,30 @@ border-bottom: 1px solid var(–border);
         </p>
         <div class="qual-list">
           <div class="qual-item">
-            <div class="qual-icon">🎓</div>
+            <div class="qual-icon"><i class="fa-solid fa-graduation-cap"></i></div>
             <div>
               <div class="qual-title">Studium der Humanmedizin</div>
               <div class="qual-sub">Universität Budapest · Dr. med. (univ.)</div>
             </div>
           </div>
           <div class="qual-item">
-            <div class="qual-icon">🏥</div>
+            <div class="qual-icon"><i class="fa-solid fa-hospital"></i></div>
             <div>
               <div class="qual-title">Fachärztin für Allgemeinmedizin</div>
               <div class="qual-sub">Niedergelassene Praxis in Hamburg Barmbek</div>
             </div>
           </div>
           <div class="qual-item">
-            <div class="qual-icon">🩸</div>
+            <div class="qual-icon"><i class="fa-solid fa-droplet"></i></div>
             <div>
               <div class="qual-title">Fachärztin für Transfusionsmedizin</div>
               <div class="qual-sub">Zusätzliche medizinische Fachspezialisierung</div>
             </div>
           </div>
-          <div class="qual-item">
-            <div class="qual-icon">♿</div>
-            <div>
-              <div class="qual-title">Barrierefreie Praxis</div>
-              <div class="qual-sub">Rollstuhlgerechter Eingang, Parkplatz und WC</div>
-            </div>
-          </div>
         </div>
         <div class="chips">
-          <span class="chip">🇩🇪 Deutsch</span>
-          <span class="chip">✅ Neue Patienten</span>
+          <span class="chip">Deutsch</span>
+          <span class="chip">Neue Patienten</span>
           <span class="chip">GKV</span>
           <span class="chip">Privatpatienten</span>
         </div>
@@ -732,32 +612,32 @@ border-bottom: 1px solid var(–border);
   <div class="section-wrap bg-dark">
     <div class="reveal">
       <div class="section-eyebrow light">Wann wir für Sie da sind</div>
-      <h2 class="section-title on-dark">Sprechzeiten &amp; <em style="color:#86efac">Kontakt</em></h2>
+      <h2 class="section-title on-dark">Sprechzeiten &amp; <span>Kontakt</span></h2>
     </div>
     <div class="sprechzeiten-grid">
       <div class="reveal" style="transition-delay:.1s">
         <p class="section-sub on-dark" style="margin-bottom:16px;">Termine bequem online über Doctolib oder telefonisch vereinbaren.</p>
         <div class="hours-list">
-          <div class="hours-item"><span class="hours-day">Montag</span><div class="hours-dot"></div><span class="hours-time">08:30 – 18:00 Uhr</span></div>
-          <div class="hours-item"><span class="hours-day">Dienstag</span><div class="hours-dot"></div><span class="hours-time">08:30 – 17:30 Uhr</span></div>
-          <div class="hours-item"><span class="hours-day">Mittwoch</span><div class="hours-dot"></div><span class="hours-time">08:30 – 12:00 Uhr</span></div>
-          <div class="hours-item"><span class="hours-day">Donnerstag</span><div class="hours-dot"></div><span class="hours-time">08:30 – 17:30 Uhr</span></div>
-          <div class="hours-item"><span class="hours-day">Freitag</span><div class="hours-dot"></div><span class="hours-time">09:00 – 12:00 Uhr</span></div>
+          <div class="hours-item"><span class="hours-day">Montag</span><div class="hours-dot"></div><span class="hours-time">08:30 – 12:00 & 15:00 – 17:30</span></div>
+          <div class="hours-item"><span class="hours-day">Dienstag</span><div class="hours-dot"></div><span class="hours-time">08:30 – 12:00 & 15:00 – 17:30</span></div>
+          <div class="hours-item"><span class="hours-day">Mittwoch</span><div class="hours-dot"></div><span class="hours-time">08:30 – 12:00</span></div>
+          <div class="hours-item"><span class="hours-day">Donnerstag</span><div class="hours-dot"></div><span class="hours-time">08:30 – 12:00 & 15:00 – 17:30</span></div>
+          <div class="hours-item"><span class="hours-day">Freitag</span><div class="hours-dot"></div><span class="hours-time">08:30 – 12:00</span></div>
           <div class="hours-item"><span class="hours-day">Samstag</span><div class="hours-dot off"></div><span class="hours-time closed">Geschlossen</span></div>
           <div class="hours-item"><span class="hours-day">Sonntag</span><div class="hours-dot off"></div><span class="hours-time closed">Geschlossen</span></div>
         </div>
       </div>
       <div class="contact-col reveal" style="transition-delay:.15s">
         <div class="contact-box">
-          <div class="contact-box-icon">📞</div>
+          <div class="contact-box-icon"><i class="fa-solid fa-phone"></i></div>
           <div>
             <div class="contact-box-label">Telefon</div>
-            <div class="contact-box-value"><a href="tel:04061170 10">040 611 70 10</a></div>
+            <div class="contact-box-value">040 611 70 10</div>
             <div class="contact-box-sub">Fax: 040 611 701 13</div>
           </div>
         </div>
         <div class="contact-box">
-          <div class="contact-box-icon">📍</div>
+          <div class="contact-box-icon"><i class="fa-solid fa-location-dot"></i></div>
           <div>
             <div class="contact-box-label">Adresse</div>
             <div class="contact-box-value">Hufnerstraße 101</div>
@@ -765,7 +645,7 @@ border-bottom: 1px solid var(–border);
           </div>
         </div>
         <div class="contact-box">
-          <div class="contact-box-icon">🏥</div>
+          <div class="contact-box-icon"><i class="fa-solid fa-shield-heart"></i></div>
           <div>
             <div class="contact-box-label">Versicherung</div>
             <div class="contact-box-value">GKV &amp; Privatpatienten</div>
@@ -773,7 +653,7 @@ border-bottom: 1px solid var(–border);
           </div>
         </div>
         <a class="doctolib-link" href="https://www.doctolib.de/einzelpraxis/hamburg/hausarztpraxis-yar-victoria" target="_blank">
-          <div class="doctolib-link-icon">📅</div>
+          <div class="doctolib-link-icon"><i class="fa-solid fa-calendar-check"></i></div>
           Jetzt online Termin buchen via Doctolib
         </a>
       </div>
@@ -787,56 +667,39 @@ border-bottom: 1px solid var(–border);
   <div class="section-wrap bg-gray">
     <div class="reveal">
       <div class="section-eyebrow">Wie Sie uns finden</div>
-      <h2 class="section-title">An<em>fahrt</em></h2>
+      <h2 class="section-title">An<span>fahrt</span></h2>
     </div>
     <div class="anfahrt-grid">
-      <div class="map-box reveal">
-        <iframe
-          title="Praxis Dr. Victoria Yar – Karte"
-          loading="lazy"
-          allowfullscreen
-          referrerpolicy="no-referrer-when-downgrade"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2368.0!2d10.035!3d53.588!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b18eed6b14b259%3A0x1!2sHufnerstra%C3%9Fe+101%2C+22305+Hamburg!5e0!3m2!1sde!2sde!4v1"
-          style="width:100%;height:100%;border:none;">
+      <div class="map-embed reveal">
+        <iframe 
+          src="https://www.google.com/maps?q=Hufnerstraße+101,+22305+Hamburg&output=embed"
+          allowfullscreen=""
+          loading="lazy">
         </iframe>
       </div>
+
       <div class="anfahrt-items reveal" style="transition-delay:.15s">
         <div class="anfahrt-item">
-          <div class="anfahrt-item-icon">🚇</div>
+          <div class="anfahrt-item-icon"><i class="fa-solid fa-train-subway"></i></div>
           <div>
             <div class="anfahrt-item-title">U-Bahn</div>
             <div class="anfahrt-item-text">U3 Haltestelle <strong>Barmbek</strong> – ca. 5 Minuten Fußweg entlang der Hufnerstraße.</div>
           </div>
         </div>
         <div class="anfahrt-item">
-          <div class="anfahrt-item-icon">🚌</div>
+          <div class="anfahrt-item-icon"><i class="fa-solid fa-bus"></i></div>
           <div>
             <div class="anfahrt-item-title">Bus</div>
             <div class="anfahrt-item-text">Linien <strong>20, 172, 173</strong> – Haltestelle Hufnerstraße direkt vor der Tür.</div>
           </div>
         </div>
         <div class="anfahrt-item">
-          <div class="anfahrt-item-icon">🚗</div>
+          <div class="anfahrt-item-icon"><i class="fa-solid fa-car"></i></div>
           <div>
             <div class="anfahrt-item-title">Auto &amp; Parkplatz</div>
             <div class="anfahrt-item-text">Parkplätze in der Hufnerstraße und den umliegenden Nebenstraßen vorhanden.</div>
           </div>
         </div>
-        <div class="anfahrt-item">
-          <div class="anfahrt-item-icon">♿</div>
-          <div>
-            <div class="anfahrt-item-title">Barrierefreiheit</div>
-            <div class="anfahrt-item-text">Die Praxis ist vollständig barrierefrei zugänglich.</div>
-            <div class="access-chips">
-              <span class="access-chip">Rollstuhlgerechter Eingang</span>
-              <span class="access-chip">Parkplatz</span>
-              <span class="access-chip">WC</span>
-            </div>
-          </div>
-        </div>
-        <a class="map-open-btn" href="https://maps.google.com/?q=Hufnerstraße+101,+22305+Hamburg" target="_blank">
-          📍 In Google Maps öffnen
-        </a>
       </div>
     </div>
   </div>
@@ -860,57 +723,35 @@ border-bottom: 1px solid var(–border);
     </div>
   </div>
   <div class="footer-bottom">
-    <div class="footer-copy">© 2026 Praxis Dr. med. Victoria Yar · Hufnerstraße 101, 22305 Hamburg</div>
+    <div class="footer-copy">© 2025 Praxis Dr. med. Victoria Yar · Hufnerstraße 101, 22305 Hamburg</div>
     <div class="footer-note">Online-Termine via Doctolib verfügbar<br>Nur medizinische Informationen – keine Rechtsberatung</div>
   </div>
 </footer>
 
 <script>
-  // Scroll: nav shadow + active link highlight
-  const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nav-links a');
-
   window.addEventListener('scroll', () => {
-    const navbar = document.getElementById('navbar');
-    navbar.classList.toggle('scrolled', window.scrollY > 10);
-
-    // Active nav link
-    let current = '';
-    sections.forEach(sec => {
-      if (window.scrollY >= sec.offsetTop - 100) current = sec.id;
-    });
-    navLinks.forEach(a => {
-      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
-    });
+    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 10);
   });
 
-  // Reveal on scroll
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-  // Mobile menu
-  let menuOpen = false;
-  function toggleMenu() {
-    const links = document.getElementById('navLinks');
-    const hamburger = document.getElementById('hamburger');
-    menuOpen = !menuOpen;
-    links.classList.toggle('nav-mobile-open', menuOpen);
-    hamburger.children[0].style.transform = menuOpen ? 'rotate(45deg) translate(5px,5px)' : '';
-    hamburger.children[1].style.opacity   = menuOpen ? '0' : '';
-    hamburger.children[2].style.transform = menuOpen ? 'rotate(-45deg) translate(5px,-5px)' : '';
+  function toggleMenu(btn) {
+    const links = document.querySelector('.nav-links');
+    const open  = links.style.display === 'flex';
+    links.style.cssText = open ? '' :
+      'display:flex;flex-direction:column;position:fixed;top:68px;left:0;right:0;background:#fff;padding:20px;gap:18px;border-bottom:1px solid #e5e7eb;z-index:199;box-shadow:0 8px 24px rgba(0,0,0,.08);';
+    btn.children[0].style.transform = open ? '' : 'rotate(45deg) translate(5px,5px)';
+    btn.children[1].style.opacity   = open ? '' : '0';
+    btn.children[2].style.transform = open ? '' : 'rotate(-45deg) translate(5px,-5px)';
   }
 
-  // Close mobile menu on link click or outside click
-  navLinks.forEach(a => {
+  document.querySelectorAll('.nav-links a').forEach(a => {
     a.addEventListener('click', () => {
-      if (menuOpen) toggleMenu();
+      if (window.innerWidth < 640) document.querySelector('.nav-links').style.display = 'none';
     });
-  });
-
-  document.addEventListener('click', e => {
-    if (menuOpen && !e.target.closest('nav')) toggleMenu();
   });
 </script>
 
