@@ -5,12 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Praxis Dr. med. Victoria Yar – Hausärztin Hamburg</title>
-
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
-
-<!-- Font Awesome Icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
 <style>
 
 /* ── RESET ── */
@@ -246,7 +241,6 @@ padding: 32px 28px; transition: box-shadow .3s, border-color .3s, transform .25s
 width: 48px; height: 48px; border-radius: 10px;
 background: var(–green-light); display: flex; align-items: center;
 justify-content: center; font-size: 24px; margin-bottom: 18px;
-color: var(–green);
 }
 .leistung-title { font-size: 16px; font-weight: 700; color: var(–text-dark); margin-bottom: 10px; line-height: 1.3; }
 .leistung-desc { font-size: 14px; font-weight: 400; line-height: 1.65; color: var(–text-soft); }
@@ -283,7 +277,6 @@ transition: border-color .2s;
 .qual-icon {
 width: 40px; height: 40px; flex-shrink: 0; background: var(–green-light);
 border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 20px;
-color: var(–green);
 }
 .qual-title { font-size: 14px; font-weight: 700; color: var(–text-dark); margin-bottom: 3px; }
 .qual-sub   { font-size: 13px; color: var(–text-soft); }
@@ -319,7 +312,6 @@ transition: background .25s, border-color .25s;
 .contact-box-icon {
 width: 44px; height: 44px; flex-shrink: 0; background: rgba(22,101,63,.4);
 border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px;
-color: #86efac;
 }
 .contact-box-label { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #86efac; margin-bottom: 4px; }
 .contact-box-value { font-size: 16px; font-weight: 700; color: #ffffff; }
@@ -340,20 +332,19 @@ border-radius: 8px; display: flex; align-items: center; justify-content: center;
 /* ════════ ANFAHRT ════════ */
 .anfahrt-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; margin-top: 52px; align-items: start; }
 
-.map-embed {
-width: 100%;
-height: 350px;
-border-radius: 12px;
-overflow: hidden;
-border: 1px solid var(–border);
-background: var(–green-light);
+.map-box {
+border-radius: 12px; border: 1px solid var(–border);
+aspect-ratio: 4/3; background: var(–green-light);
+display: flex; align-items: center; justify-content: center;
+flex-direction: column; gap: 16px; text-align: center; padding: 32px;
 }
-
-.map-embed iframe {
-width: 100%;
-height: 100%;
-border: 0;
+.map-box-pin     { font-size: 48px; }
+.map-box-address { font-size: 16px; font-weight: 700; color: var(–text-dark); line-height: 1.4; }
+.map-box-btn {
+padding: 12px 24px; background: var(–green); color: white;
+border-radius: 6px; text-decoration: none; font-size: 13px; font-weight: 700; transition: background .2s;
 }
+.map-box-btn:hover { background: var(–green-hover); }
 
 .anfahrt-items { display: flex; flex-direction: column; gap: 14px; }
 .anfahrt-item {
@@ -365,10 +356,11 @@ transition: border-color .2s, box-shadow .2s;
 .anfahrt-item-icon {
 width: 42px; height: 42px; flex-shrink: 0; background: var(–green-light);
 border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 20px;
-color: var(–green);
 }
 .anfahrt-item-title { font-size: 13px; font-weight: 700; color: var(–text-dark); text-transform: uppercase; letter-spacing: .05em; margin-bottom: 5px; }
 .anfahrt-item-text  { font-size: 14px; color: var(–text-soft); line-height: 1.6; }
+.access-chips { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; }
+.access-chip  { padding: 3px 10px; border-radius: 4px; background: var(–green-light); font-size: 11px; font-weight: 600; color: var(–green); }
 
 /* ════════ FOOTER ════════ */
 footer { background: var(–dark-section); padding: 48px 80px 28px; }
@@ -429,7 +421,7 @@ footer { padding: 40px 20px 24px; }
 
 <nav id="navbar">
   <a class="nav-logo" href="#">
-    <div class="nav-logo-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+    <div class="nav-logo-icon">⚕</div>
     <div>
       <div class="nav-logo-name">Dr. med. Victoria Yar</div>
       <div class="nav-logo-sub">Hausärztin · Hamburg</div>
@@ -451,7 +443,7 @@ footer { padding: 40px 20px 24px; }
 
 <section id="hero">
   <div class="hero-left">
-    <div class="hero-eyebrow"><i class="fa-solid fa-hospital"></i> Hausarztpraxis · Hamburg Barmbek</div>
+    <div class="hero-eyebrow">🏥 Hausarztpraxis · Hamburg Barmbek</div>
     <h1 class="hero-h1">Ihre Gesundheit<br>in <span>guten Händen.</span></h1>
     <p class="hero-desc">
       Dr. med. Victoria Yar – Fachärztin für Allgemeinmedizin in Hamburg.
@@ -459,9 +451,7 @@ footer { padding: 40px 20px 24px; }
       von der Vorsorge bis zur spezialisierten Behandlung.
     </p>
     <div class="hero-buttons">
-      <a class="btn-green" href="https://www.doctolib.de/einzelpraxis/hamburg/hausarztpraxis-yar-victoria" target="_blank">
-        <i class="fa-solid fa-calendar-check"></i> Online Termin buchen
-      </a>
+      <a class="btn-green" href="https://www.doctolib.de/einzelpraxis/hamburg/hausarztpraxis-yar-victoria" target="_blank">📅 Online Termin buchen</a>
       <a class="btn-ghost" href="#leistungen">Unsere Leistungen →</a>
     </div>
     <div class="hero-stats">
@@ -482,15 +472,15 @@ footer { padding: 40px 20px 24px; }
   <div class="hero-right">
     <div class="hero-right-bg">+</div>
     <div class="hero-photo-box">
-      <div class="hero-photo-icon"><i class="fa-solid fa-user-doctor"></i></div>
+      <div class="hero-photo-icon">⚕</div>
       <span>Foto der Ärztin</span>
     </div>
     <div class="hero-info-card">
       <div class="online-dot"></div>
       <div class="hero-info-label">Sprechzeiten</div>
-      <div class="hero-info-row"><span>Mo, Di, Do</span><span>08:30–12:00</span></div>
-      <div class="hero-info-row"><span></span><span>15:00–17:30</span></div>
+      <div class="hero-info-row"><span>Mo &amp; Di</span><span>08:30–18:00</span></div>
       <div class="hero-info-row"><span>Mi &amp; Fr</span><span>08:30–12:00</span></div>
+      <div class="hero-info-row"><span>Do</span><span>08:30–17:30</span></div>
     </div>
     <div class="hero-doctolib-pill">
       <div class="pill-dot"></div>
@@ -511,37 +501,37 @@ footer { padding: 40px 20px 24px; }
     <div class="leistungen-grid">
       <div class="leistung-card reveal" style="transition-delay:.05s">
         <div class="leistung-num">01</div>
-        <div class="leistung-icon-wrap"><i class="fa-solid fa-stethoscope"></i></div>
+        <div class="leistung-icon-wrap">🩺</div>
         <div class="leistung-title">Allgemeinmedizin</div>
         <p class="leistung-desc">Erste Anlaufstelle für alle gesundheitlichen Anliegen. Individuelle und ganzheitliche Beratung für die gesamte Familie.</p>
       </div>
       <div class="leistung-card reveal" style="transition-delay:.1s">
         <div class="leistung-num">02</div>
-        <div class="leistung-icon-wrap"><i class="fa-solid fa-microscope"></i></div>
+        <div class="leistung-icon-wrap">🔬</div>
         <div class="leistung-title">Vorsorge &amp; Check-ups</div>
         <p class="leistung-desc">Regelmäßige Gesundheitsuntersuchungen und Früherkennungsmaßnahmen – Prävention steht bei uns im Vordergrund.</p>
       </div>
       <div class="leistung-card reveal" style="transition-delay:.15s">
         <div class="leistung-num">03</div>
-        <div class="leistung-icon-wrap"><i class="fa-solid fa-syringe"></i></div>
+        <div class="leistung-icon-wrap">💉</div>
         <div class="leistung-title">Impfungen</div>
         <p class="leistung-desc">Standard- und Reiseimpfungen für Kinder und Erwachsene. Umfassende Beratung zu allen empfohlenen Impfungen.</p>
       </div>
       <div class="leistung-card reveal" style="transition-delay:.2s">
         <div class="leistung-num">04</div>
-        <div class="leistung-icon-wrap"><i class="fa-solid fa-leaf"></i></div>
+        <div class="leistung-icon-wrap">🌿</div>
         <div class="leistung-title">Akupunktur</div>
         <p class="leistung-desc">Ganzheitliche Therapie bei Schmerzen, Migräne, Allergien und Stress. Traditionelle Heilmethode, modern eingesetzt.</p>
       </div>
       <div class="leistung-card reveal" style="transition-delay:.25s">
         <div class="leistung-num">05</div>
-        <div class="leistung-icon-wrap"><i class="fa-solid fa-plane"></i></div>
+        <div class="leistung-icon-wrap">✈️</div>
         <div class="leistung-title">Reiseimpfberatung</div>
         <p class="leistung-desc">Individuelle Beratung und Impfungen für Ihre Reise ins Ausland – als Selbstzahlerleistung mit umfassendem Reiseschutz.</p>
       </div>
       <div class="leistung-card reveal" style="transition-delay:.3s">
         <div class="leistung-num">06</div>
-        <div class="leistung-icon-wrap"><i class="fa-solid fa-droplet"></i></div>
+        <div class="leistung-icon-wrap">🩸</div>
         <div class="leistung-title">Transfusionsmedizin</div>
         <p class="leistung-desc">Fachärztliche Expertise in der Transfusionsmedizin als ergänzende Spezialisierung zu unserer hausärztlichen Tätigkeit.</p>
       </div>
@@ -556,7 +546,7 @@ footer { padding: 40px 20px 24px; }
     <div class="ueber-grid">
       <div class="ueber-photo-wrap reveal">
         <div class="ueber-photo-frame">
-          <div class="ueber-frame-icon"><i class="fa-solid fa-user-doctor"></i></div>
+          <div class="ueber-frame-icon">⚕</div>
           <span>Foto der Ärztin</span>
         </div>
         <div class="ueber-accent-box">
@@ -574,30 +564,37 @@ footer { padding: 40px 20px 24px; }
         </p>
         <div class="qual-list">
           <div class="qual-item">
-            <div class="qual-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+            <div class="qual-icon">🎓</div>
             <div>
               <div class="qual-title">Studium der Humanmedizin</div>
               <div class="qual-sub">Universität Budapest · Dr. med. (univ.)</div>
             </div>
           </div>
           <div class="qual-item">
-            <div class="qual-icon"><i class="fa-solid fa-hospital"></i></div>
+            <div class="qual-icon">🏥</div>
             <div>
               <div class="qual-title">Fachärztin für Allgemeinmedizin</div>
               <div class="qual-sub">Niedergelassene Praxis in Hamburg Barmbek</div>
             </div>
           </div>
           <div class="qual-item">
-            <div class="qual-icon"><i class="fa-solid fa-droplet"></i></div>
+            <div class="qual-icon">🩸</div>
             <div>
               <div class="qual-title">Fachärztin für Transfusionsmedizin</div>
               <div class="qual-sub">Zusätzliche medizinische Fachspezialisierung</div>
             </div>
           </div>
+          <div class="qual-item">
+            <div class="qual-icon">♿</div>
+            <div>
+              <div class="qual-title">Barrierefreie Praxis</div>
+              <div class="qual-sub">Rollstuhlgerechter Eingang, Parkplatz und WC</div>
+            </div>
+          </div>
         </div>
         <div class="chips">
-          <span class="chip">Deutsch</span>
-          <span class="chip">Neue Patienten</span>
+          <span class="chip">🇩🇪 Deutsch</span>
+          <span class="chip">✅ Neue Patienten</span>
           <span class="chip">GKV</span>
           <span class="chip">Privatpatienten</span>
         </div>
@@ -618,18 +615,18 @@ footer { padding: 40px 20px 24px; }
       <div class="reveal" style="transition-delay:.1s">
         <p class="section-sub on-dark" style="margin-bottom:16px;">Termine bequem online über Doctolib oder telefonisch vereinbaren.</p>
         <div class="hours-list">
-          <div class="hours-item"><span class="hours-day">Montag</span><div class="hours-dot"></div><span class="hours-time">08:30 – 12:00 &amp; 15:00 – 17:30</span></div>
-          <div class="hours-item"><span class="hours-day">Dienstag</span><div class="hours-dot"></div><span class="hours-time">08:30 – 12:00 &amp; 15:00 – 17:30</span></div>
-          <div class="hours-item"><span class="hours-day">Mittwoch</span><div class="hours-dot"></div><span class="hours-time">08:30 – 12:00</span></div>
-          <div class="hours-item"><span class="hours-day">Donnerstag</span><div class="hours-dot"></div><span class="hours-time">08:30 – 12:00 &amp; 15:00 – 17:30</span></div>
-          <div class="hours-item"><span class="hours-day">Freitag</span><div class="hours-dot"></div><span class="hours-time">08:30 – 12:00</span></div>
+          <div class="hours-item"><span class="hours-day">Montag</span><div class="hours-dot"></div><span class="hours-time">08:30 – 18:00 Uhr</span></div>
+          <div class="hours-item"><span class="hours-day">Dienstag</span><div class="hours-dot"></div><span class="hours-time">08:30 – 17:30 Uhr</span></div>
+          <div class="hours-item"><span class="hours-day">Mittwoch</span><div class="hours-dot"></div><span class="hours-time">08:30 – 12:00 Uhr</span></div>
+          <div class="hours-item"><span class="hours-day">Donnerstag</span><div class="hours-dot"></div><span class="hours-time">08:30 – 17:30 Uhr</span></div>
+          <div class="hours-item"><span class="hours-day">Freitag</span><div class="hours-dot"></div><span class="hours-time">09:00 – 12:00 Uhr</span></div>
           <div class="hours-item"><span class="hours-day">Samstag</span><div class="hours-dot off"></div><span class="hours-time closed">Geschlossen</span></div>
           <div class="hours-item"><span class="hours-day">Sonntag</span><div class="hours-dot off"></div><span class="hours-time closed">Geschlossen</span></div>
         </div>
       </div>
       <div class="contact-col reveal" style="transition-delay:.15s">
         <div class="contact-box">
-          <div class="contact-box-icon"><i class="fa-solid fa-phone"></i></div>
+          <div class="contact-box-icon">📞</div>
           <div>
             <div class="contact-box-label">Telefon</div>
             <div class="contact-box-value">040 611 70 10</div>
@@ -637,7 +634,7 @@ footer { padding: 40px 20px 24px; }
           </div>
         </div>
         <div class="contact-box">
-          <div class="contact-box-icon"><i class="fa-solid fa-location-dot"></i></div>
+          <div class="contact-box-icon">📍</div>
           <div>
             <div class="contact-box-label">Adresse</div>
             <div class="contact-box-value">Hufnerstraße 101</div>
@@ -645,7 +642,7 @@ footer { padding: 40px 20px 24px; }
           </div>
         </div>
         <div class="contact-box">
-          <div class="contact-box-icon"><i class="fa-solid fa-shield-heart"></i></div>
+          <div class="contact-box-icon">🏥</div>
           <div>
             <div class="contact-box-label">Versicherung</div>
             <div class="contact-box-value">GKV &amp; Privatpatienten</div>
@@ -653,7 +650,7 @@ footer { padding: 40px 20px 24px; }
           </div>
         </div>
         <a class="doctolib-link" href="https://www.doctolib.de/einzelpraxis/hamburg/hausarztpraxis-yar-victoria" target="_blank">
-          <div class="doctolib-link-icon"><i class="fa-solid fa-calendar-check"></i></div>
+          <div class="doctolib-link-icon">📅</div>
           Jetzt online Termin buchen via Doctolib
         </a>
       </div>
@@ -670,39 +667,46 @@ footer { padding: 40px 20px 24px; }
       <h2 class="section-title">An<span>fahrt</span></h2>
     </div>
     <div class="anfahrt-grid">
-
-      <div class="map-embed reveal">
-        <iframe 
-          src="https://www.google.com/maps?q=Hufnerstraße+101,+22305+Hamburg&output=embed"
-          allowfullscreen=""
-          loading="lazy">
-        </iframe>
+      <div class="map-box reveal">
+        <div class="map-box-pin">📍</div>
+        <div class="map-box-address">Hufnerstraße 101<br>22305 Hamburg</div>
+        <a class="map-box-btn" href="https://maps.google.com/?q=Hufnerstraße+101,+22305+Hamburg" target="_blank">In Google Maps öffnen</a>
       </div>
-
       <div class="anfahrt-items reveal" style="transition-delay:.15s">
         <div class="anfahrt-item">
-          <div class="anfahrt-item-icon"><i class="fa-solid fa-train-subway"></i></div>
+          <div class="anfahrt-item-icon">🚇</div>
           <div>
             <div class="anfahrt-item-title">U-Bahn</div>
             <div class="anfahrt-item-text">U3 Haltestelle <strong>Barmbek</strong> – ca. 5 Minuten Fußweg entlang der Hufnerstraße.</div>
           </div>
         </div>
         <div class="anfahrt-item">
-          <div class="anfahrt-item-icon"><i class="fa-solid fa-bus"></i></div>
+          <div class="anfahrt-item-icon">🚌</div>
           <div>
             <div class="anfahrt-item-title">Bus</div>
             <div class="anfahrt-item-text">Linien <strong>20, 172, 173</strong> – Haltestelle Hufnerstraße direkt vor der Tür.</div>
           </div>
         </div>
         <div class="anfahrt-item">
-          <div class="anfahrt-item-icon"><i class="fa-solid fa-car"></i></div>
+          <div class="anfahrt-item-icon">🚗</div>
           <div>
             <div class="anfahrt-item-title">Auto &amp; Parkplatz</div>
             <div class="anfahrt-item-text">Parkplätze in der Hufnerstraße und den umliegenden Nebenstraßen vorhanden.</div>
           </div>
         </div>
+        <div class="anfahrt-item">
+          <div class="anfahrt-item-icon">♿</div>
+          <div>
+            <div class="anfahrt-item-title">Barrierefreiheit</div>
+            <div class="anfahrt-item-text">Die Praxis ist vollständig barrierefrei zugänglich.</div>
+            <div class="access-chips">
+              <span class="access-chip">Rollstuhlgerechter Eingang</span>
+              <span class="access-chip">Parkplatz</span>
+              <span class="access-chip">WC</span>
+            </div>
+          </div>
+        </div>
       </div>
-
     </div>
   </div>
 </section>
@@ -749,7 +753,6 @@ footer { padding: 40px 20px 24px; }
     btn.children[1].style.opacity   = open ? '' : '0';
     btn.children[2].style.transform = open ? '' : 'rotate(-45deg) translate(5px,-5px)';
   }
-
   document.querySelectorAll('.nav-links a').forEach(a => {
     a.addEventListener('click', () => {
       if (window.innerWidth < 640) document.querySelector('.nav-links').style.display = 'none';
