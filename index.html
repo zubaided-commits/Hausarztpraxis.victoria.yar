@@ -44,6 +44,11 @@ overflow-x: hidden;
 ::-webkit-scrollbar-track { background: var(–white); }
 ::-webkit-scrollbar-thumb { background: var(–green-border); border-radius: 3px; }
 
+/* Professional Icon Colors */
+.fa-solid, .fa-regular, .fa-brands {
+  color: inherit;
+}
+
 /* ════════ NAV ════════ */
 nav {
 position: fixed; top: 0; left: 0; right: 0; z-index: 200;
@@ -62,7 +67,7 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,.07); }
 .nav-logo-icon {
 width: 38px; height: 38px; background: var(–green);
 border-radius: 8px; display: flex; align-items: center;
-justify-content: center; color: white; font-size: 16px; flex-shrink: 0;
+justify-content: center; color: white; font-size: 18px; flex-shrink: 0;
 }
 .nav-logo-name { font-size: 14px; font-weight: 700; color: var(–text-dark); letter-spacing: -.01em; line-height: 1.25; }
 .nav-logo-sub  { font-size: 11px; font-weight: 400; color: var(–text-soft); letter-spacing: .02em; }
@@ -242,12 +247,14 @@ padding: 32px 28px; transition: box-shadow .3s, border-color .3s, transform .25s
 }
 .leistung-card:hover { box-shadow: 0 12px 40px rgba(22,101,63,.1); border-color: var(–green-border); transform: translateY(-4px); }
 .leistung-num { font-size: 11px; font-weight: 700; letter-spacing: .1em; color: #d1d5db; text-transform: uppercase; margin-bottom: 16px; }
+
 .leistung-icon-wrap {
 width: 48px; height: 48px; border-radius: 10px;
 background: var(–green-light); display: flex; align-items: center;
-justify-content: center; font-size: 20px; margin-bottom: 18px;
+justify-content: center; font-size: 22px; margin-bottom: 18px;
 color: var(–green);
 }
+
 .leistung-title { font-size: 16px; font-weight: 700; color: var(–text-dark); margin-bottom: 10px; line-height: 1.3; }
 .leistung-desc { font-size: 14px; font-weight: 400; line-height: 1.65; color: var(–text-soft); }
 
@@ -280,11 +287,14 @@ background: var(–bg-section); border-radius: 10px; border: 1px solid var(–bo
 transition: border-color .2s;
 }
 .qual-item:hover { border-color: var(–green-border); }
+
 .qual-icon {
 width: 40px; height: 40px; flex-shrink: 0; background: var(–green-light);
-border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 18px;
+border-radius: 8px; display: flex; align-items: center; justify-content: center;
+font-size: 20px;
 color: var(–green);
 }
+
 .qual-title { font-size: 14px; font-weight: 700; color: var(–text-dark); margin-bottom: 3px; }
 .qual-sub   { font-size: 13px; color: var(–text-soft); }
 
@@ -316,11 +326,13 @@ border-radius: 12px; padding: 20px 22px; display: flex; gap: 16px; align-items: 
 transition: background .25s, border-color .25s;
 }
 .contact-box:hover { background: rgba(255,255,255,.08); border-color: rgba(134,239,172,.2); }
+
 .contact-box-icon {
 width: 44px; height: 44px; flex-shrink: 0; background: rgba(22,101,63,.4);
 border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px;
 color: #86efac;
 }
+
 .contact-box-label { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #86efac; margin-bottom: 4px; }
 .contact-box-value { font-size: 16px; font-weight: 700; color: #ffffff; }
 .contact-box-sub   { font-size: 12px; color: #6b7280; margin-top: 2px; }
@@ -332,6 +344,7 @@ border-radius: 10px; text-decoration: none; font-size: 14px; font-weight: 700;
 transition: opacity .2s, transform .2s; margin-top: 4px;
 }
 .doctolib-link:hover { opacity: .92; transform: translateY(-2px); }
+
 .doctolib-link-icon {
 width: 40px; height: 40px; background: rgba(255,255,255,.2);
 border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0;
@@ -362,11 +375,14 @@ background: var(–white); border: 1px solid var(–border); border-radius: 10px
 transition: border-color .2s, box-shadow .2s;
 }
 .anfahrt-item:hover { border-color: var(–green-border); box-shadow: 0 4px 16px rgba(22,101,63,.07); }
+
 .anfahrt-item-icon {
 width: 42px; height: 42px; flex-shrink: 0; background: var(–green-light);
-border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 18px;
+border-radius: 8px; display: flex; align-items: center; justify-content: center;
+font-size: 20px;
 color: var(–green);
 }
+
 .anfahrt-item-title { font-size: 13px; font-weight: 700; color: var(–text-dark); text-transform: uppercase; letter-spacing: .05em; margin-bottom: 5px; }
 .anfahrt-item-text  { font-size: 14px; color: var(–text-soft); line-height: 1.6; }
 
