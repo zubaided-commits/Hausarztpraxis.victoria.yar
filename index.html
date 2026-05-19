@@ -4,41 +4,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Praxis Dr. med. Victoria Yar – Hausärztin Hamburg</title>
-<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<title>Praxis Dr. med. Victoria Yar - Hausaerztin Hamburg</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-:root {
-–green:        #16653f;
-–green-hover:  #1a7d4d;
-–green-light:  #eaf5f0;
-–green-border: #b8d9c8;
-–text-dark:    #0f1c14;
-–text-mid:     #2d4a38;
-–text-soft:    #627a6d;
-–border:       #dde8e2;
-–white:        #ffffff;
-–bg-section:   #f4f8f5;
-–dark-section: #0c1810;
-}
 
 html { scroll-behavior: smooth; }
 
 body {
 font-family: ‘DM Sans’, sans-serif;
-background: var(–white);
-color: var(–text-dark);
+background: #ffffff;
+color: #0f1c14;
 overflow-x: hidden;
 -webkit-font-smoothing: antialiased;
 }
 
 ::-webkit-scrollbar { width: 5px; }
-::-webkit-scrollbar-track { background: var(–white); }
-::-webkit-scrollbar-thumb { background: var(–green-border); border-radius: 3px; }
+::-webkit-scrollbar-track { background: #ffffff; }
+::-webkit-scrollbar-thumb { background: #b8d9c8; border-radius: 3px; }
 
-/* ════════ EMERGENCY BANNER ════════ */
+/* ════ EMERGENCY BANNER ════ */
 .emergency-banner {
 background: #7f1d1d;
 color: #fef2f2;
@@ -46,460 +32,694 @@ text-align: center;
 padding: 10px 20px;
 font-size: 13px;
 font-weight: 500;
-display: flex; align-items: center; justify-content: center; gap: 8px;
-position: relative; z-index: 300;
+display: -webkit-flex;
+display: flex;
+-webkit-align-items: center;
+align-items: center;
+-webkit-justify-content: center;
+justify-content: center;
+gap: 8px;
+position: relative;
+z-index: 300;
 }
 .emergency-banner strong { font-weight: 700; color: #fca5a5; }
 .emergency-banner a { color: #fca5a5; font-weight: 700; text-decoration: none; }
 .emergency-banner a:hover { text-decoration: underline; }
 
-/* ════════ NAV ════════ */
+/* ════ NAV ════ */
 nav {
-position: sticky; top: 0; z-index: 200;
-height: 68px;
-background: rgba(255,255,255,0.97);
-border-bottom: 1px solid var(–border);
-display: flex; align-items: center; justify-content: space-between;
+position: -webkit-sticky;
+position: sticky;
+top: 0;
+z-index: 200;
+height: 72px;
+background: #ffffff;
+border-bottom: 1px solid #dde8e2;
+display: -webkit-flex;
+display: flex;
+-webkit-align-items: center;
+align-items: center;
+-webkit-justify-content: space-between;
+justify-content: space-between;
 padding: 0 64px;
+-webkit-backdrop-filter: blur(12px);
 backdrop-filter: blur(12px);
-transition: box-shadow .3s;
+transition: box-shadow 0.3s;
 }
-nav.scrolled { box-shadow: 0 2px 20px rgba(14,66,41,.08); }
+nav.scrolled { box-shadow: 0 2px 20px rgba(14,66,41,0.09); }
 
-.nav-logo { text-decoration: none; display: flex; align-items: center; gap: 12px; }
+.nav-logo {
+text-decoration: none;
+display: -webkit-flex;
+display: flex;
+-webkit-align-items: center;
+align-items: center;
+gap: 12px;
+}
 .nav-logo-icon {
-width: 38px; height: 38px; background: var(–green);
-border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+width: 40px; height: 40px;
+background: #16653f;
+border-radius: 10px;
+display: -webkit-flex;
+display: flex;
+-webkit-align-items: center;
+align-items: center;
+-webkit-justify-content: center;
+justify-content: center;
+flex-shrink: 0;
 }
-.nav-logo-name { font-size: 14px; font-weight: 700; color: var(–text-dark); letter-spacing: -.01em; line-height: 1.25; }
-.nav-logo-sub  { font-size: 11px; color: var(–text-soft); }
+.nav-logo-name { font-size: 14px; font-weight: 700; color: #0f1c14; letter-spacing: -0.01em; line-height: 1.25; }
+.nav-logo-sub  { font-size: 11px; color: #627a6d; }
 
-.nav-links { display: flex; gap: 32px; list-style: none; }
+/* NAV LINKS — pill style */
+.nav-links { display: -webkit-flex; display: flex; gap: 4px; list-style: none; -webkit-align-items: center; align-items: center; }
 .nav-links a {
-font-size: 14px; font-weight: 500; color: var(–text-soft); text-decoration: none;
-transition: color .2s; position: relative; padding-bottom: 4px;
+font-size: 13.5px;
+font-weight: 500;
+color: #2d4a38;
+text-decoration: none;
+padding: 7px 16px;
+border-radius: 6px;
+border: 1px solid transparent;
+transition: background 0.2s, color 0.2s, border-color 0.2s;
+display: block;
 }
-.nav-links a::after {
-content: ‘’; position: absolute; bottom: -2px; left: 0; right: 0;
-height: 2px; background: var(–green); border-radius: 2px;
-transform: scaleX(0); transition: transform .25s ease;
+.nav-links a:hover {
+background: #eaf5f0;
+color: #16653f;
+border-color: #b8d9c8;
 }
-.nav-links a:hover, .nav-links a.active { color: var(–green); }
-.nav-links a:hover::after, .nav-links a.active::after { transform: scaleX(1); }
+.nav-links a.active {
+background: #eaf5f0;
+color: #16653f;
+border-color: #b8d9c8;
+font-weight: 600;
+}
 
 .nav-cta {
-padding: 10px 22px; background: var(–green); color: #fff;
-font-size: 13px; font-weight: 600; border-radius: 6px;
-text-decoration: none; transition: background .2s, transform .15s;
-display: flex; align-items: center; gap: 8px;
+padding: 10px 22px;
+background: #16653f;
+color: #ffffff;
+font-size: 13px;
+font-weight: 600;
+border-radius: 7px;
+text-decoration: none;
+border: 2px solid #16653f;
+transition: background 0.2s, transform 0.15s;
+display: -webkit-flex;
+display: flex;
+-webkit-align-items: center;
+align-items: center;
+gap: 8px;
+margin-left: 12px;
 }
-.nav-cta:hover { background: var(–green-hover); transform: translateY(-1px); }
+.nav-cta:hover { background: #1a7d4d; border-color: #1a7d4d; transform: translateY(-1px); }
 
-.nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
-.nav-hamburger span { width: 22px; height: 2px; background: var(–text-dark); display: block; transition: .3s; border-radius: 2px; }
+.nav-hamburger { display: none; -webkit-flex-direction: column; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+.nav-hamburger span { width: 22px; height: 2px; background: #0f1c14; display: block; transition: 0.3s; border-radius: 2px; }
 
-/* ════════ HERO ════════ */
+/* ════ HERO ════ */
 #hero {
-min-height: calc(100vh - 68px - 40px);
-display: grid; grid-template-columns: 55fr 45fr;
-background: var(–white);
+min-height: calc(100vh - 72px - 40px);
+display: -webkit-flex;
+display: flex;
+background: #ffffff;
 }
 .hero-left {
+width: 55%;
 padding: 72px 52px 72px 80px;
-display: flex; flex-direction: column; justify-content: center;
+display: -webkit-flex;
+display: flex;
+-webkit-flex-direction: column;
+flex-direction: column;
+-webkit-justify-content: center;
+justify-content: center;
 position: relative;
 }
 .hero-left::before {
-content: ‘’; position: absolute; inset: 0;
-background-image: radial-gradient(circle, var(–green-border) 1px, transparent 1px);
-background-size: 28px 28px; opacity: .22; pointer-events: none;
+content: ‘’;
+position: absolute; inset: 0;
+background-image: radial-gradient(circle, #b8d9c8 1px, transparent 1px);
+background-size: 28px 28px;
+opacity: 0.2;
+pointer-events: none;
 }
 
 .hero-eyebrow {
-display: inline-flex; align-items: center; gap: 8px;
-background: var(–green-light); color: var(–green);
-font-size: 11.5px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase;
-padding: 6px 14px; border-radius: 20px; margin-bottom: 28px; width: fit-content;
-border: 1px solid var(–green-border);
-opacity: 0; animation: fadeUp .6s .1s forwards; position: relative; z-index: 1;
+display: -webkit-inline-flex;
+display: inline-flex;
+-webkit-align-items: center;
+align-items: center;
+gap: 8px;
+background: #eaf5f0;
+color: #16653f;
+font-size: 11px;
+font-weight: 600;
+letter-spacing: 0.06em;
+text-transform: uppercase;
+padding: 6px 14px;
+border-radius: 20px;
+margin-bottom: 28px;
+width: -webkit-fit-content;
+width: fit-content;
+border: 1px solid #b8d9c8;
+opacity: 0;
+-webkit-animation: fadeUp 0.6s 0.1s forwards;
+animation: fadeUp 0.6s 0.1s forwards;
+position: relative;
+z-index: 1;
 }
 .hero-h1 {
 font-family: ‘Lora’, serif;
-font-size: clamp(38px, 4.5vw, 60px); font-weight: 700; line-height: 1.1;
-color: var(–text-dark); margin-bottom: 24px;
-opacity: 0; animation: fadeUp .6s .2s forwards; position: relative; z-index: 1;
+font-size: clamp(36px, 4.5vw, 58px);
+font-weight: 700;
+line-height: 1.1;
+color: #0f1c14;
+margin-bottom: 24px;
+opacity: 0;
+-webkit-animation: fadeUp 0.6s 0.2s forwards;
+animation: fadeUp 0.6s 0.2s forwards;
+position: relative;
+z-index: 1;
 }
-.hero-h1 em { color: var(–green); font-style: italic; }
+.hero-h1 em { color: #16653f; font-style: italic; }
 .hero-desc {
-font-size: 16px; line-height: 1.85; color: var(–text-soft);
-max-width: 440px; margin-bottom: 40px;
-opacity: 0; animation: fadeUp .6s .3s forwards; position: relative; z-index: 1;
+font-size: 16px;
+line-height: 1.85;
+color: #627a6d;
+max-width: 440px;
+margin-bottom: 40px;
+opacity: 0;
+-webkit-animation: fadeUp 0.6s 0.3s forwards;
+animation: fadeUp 0.6s 0.3s forwards;
+position: relative;
+z-index: 1;
 }
 .hero-buttons {
-display: flex; gap: 12px; flex-wrap: wrap;
-opacity: 0; animation: fadeUp .6s .4s forwards; position: relative; z-index: 1;
+display: -webkit-flex;
+display: flex;
+gap: 12px;
+-webkit-flex-wrap: wrap;
+flex-wrap: wrap;
+opacity: 0;
+-webkit-animation: fadeUp 0.6s 0.4s forwards;
+animation: fadeUp 0.6s 0.4s forwards;
+position: relative;
+z-index: 1;
 }
 .btn-green {
-padding: 13px 28px; background: var(–green); color: #fff;
-font-size: 14px; font-weight: 600; border-radius: 7px; text-decoration: none;
-border: 2px solid var(–green); transition: background .2s, transform .15s, box-shadow .2s;
-display: inline-flex; align-items: center; gap: 8px;
-box-shadow: 0 4px 14px rgba(22,101,63,.3);
+padding: 13px 28px;
+background: #16653f;
+color: #ffffff;
+font-size: 14px;
+font-weight: 600;
+border-radius: 7px;
+text-decoration: none;
+border: 2px solid #16653f;
+transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+display: -webkit-inline-flex;
+display: inline-flex;
+-webkit-align-items: center;
+align-items: center;
+gap: 8px;
+box-shadow: 0 4px 14px rgba(22,101,63,0.3);
 }
-.btn-green:hover { background: var(–green-hover); border-color: var(–green-hover); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(22,101,63,.35); }
+.btn-green:hover { background: #1a7d4d; border-color: #1a7d4d; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(22,101,63,0.35); }
 .btn-ghost {
-padding: 13px 28px; background: transparent; color: var(–text-dark);
-font-size: 14px; font-weight: 600; border-radius: 7px; text-decoration: none;
-border: 2px solid var(–border); transition: border-color .2s, color .2s, transform .15s;
-display: inline-flex; align-items: center; gap: 8px;
+padding: 13px 28px;
+background: transparent;
+color: #0f1c14;
+font-size: 14px;
+font-weight: 600;
+border-radius: 7px;
+text-decoration: none;
+border: 2px solid #dde8e2;
+transition: border-color 0.2s, color 0.2s, transform 0.15s;
+display: -webkit-inline-flex;
+display: inline-flex;
+-webkit-align-items: center;
+align-items: center;
+gap: 8px;
 }
-.btn-ghost:hover { border-color: var(–green); color: var(–green); transform: translateY(-2px); }
+.btn-ghost:hover { border-color: #16653f; color: #16653f; transform: translateY(-2px); }
 
 .hero-stats {
-display: flex; gap: 40px; margin-top: 52px; padding-top: 28px;
-border-top: 1px solid var(–border);
-opacity: 0; animation: fadeUp .6s .5s forwards; position: relative; z-index: 1;
+display: -webkit-flex;
+display: flex;
+gap: 40px;
+margin-top: 52px;
+padding-top: 28px;
+border-top: 1px solid #dde8e2;
+opacity: 0;
+-webkit-animation: fadeUp 0.6s 0.5s forwards;
+animation: fadeUp 0.6s 0.5s forwards;
+position: relative;
+z-index: 1;
 }
-.hero-stat-value { font-family: ‘Lora’, serif; font-size: 30px; font-weight: 700; color: var(–text-dark); line-height: 1; }
-.hero-stat-label { font-size: 11px; font-weight: 500; color: var(–text-soft); margin-top: 5px; text-transform: uppercase; letter-spacing: .06em; }
+.hero-stat-value { font-family: ‘Lora’, serif; font-size: 30px; font-weight: 700; color: #0f1c14; line-height: 1; }
+.hero-stat-label { font-size: 11px; font-weight: 500; color: #627a6d; margin-top: 5px; text-transform: uppercase; letter-spacing: 0.06em; }
 
 /* Hero Right */
 .hero-right {
-background: var(–green-light); position: relative; overflow: hidden;
-display: flex; align-items: center; justify-content: center;
-opacity: 0; animation: fadeIn .8s .25s forwards;
+width: 45%;
+background: #eaf5f0;
+position: relative;
+overflow: hidden;
+display: -webkit-flex;
+display: flex;
+-webkit-align-items: center;
+align-items: center;
+-webkit-justify-content: center;
+justify-content: center;
+opacity: 0;
+-webkit-animation: fadeIn 0.8s 0.25s forwards;
+animation: fadeIn 0.8s 0.25s forwards;
 }
 .hero-right::before {
-content: ‘’; position: absolute; width: 500px; height: 500px;
-background: radial-gradient(ellipse, rgba(22,101,63,.13) 0%, transparent 70%);
-top: -100px; right: -100px; pointer-events: none;
+content: ‘’;
+position: absolute;
+width: 500px; height: 500px;
+background: radial-gradient(ellipse, rgba(22,101,63,0.13) 0%, transparent 70%);
+top: -100px; right: -100px;
+pointer-events: none;
 }
-
-/* Photo fills the right panel */
 .hero-photo-fill {
-position: absolute; inset: 0; z-index: 2; overflow: hidden;
+position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+z-index: 2; overflow: hidden;
 }
 .hero-photo-fill img {
-width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block;
+width: 100%; height: 100%;
+object-fit: cover;
+object-position: center top;
+display: block;
 }
 
 .hero-info-card {
 position: absolute; bottom: 32px; left: 24px;
-background: var(–white); border-radius: 12px; padding: 16px 20px;
-box-shadow: 0 8px 32px rgba(0,0,0,.12); min-width: 220px; z-index: 3;
-border-left: 3px solid var(–green);
-animation: slideUp .6s .65s both;
+background: #ffffff;
+border-radius: 12px; padding: 16px 20px;
+box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+min-width: 230px; z-index: 3;
+border-left: 3px solid #16653f;
+-webkit-animation: slideUp 0.6s 0.65s both;
+animation: slideUp 0.6s 0.65s both;
 }
-.hero-info-label { font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(–green); margin-bottom: 10px; }
-.hero-info-row { display: flex; justify-content: space-between; gap: 12px; font-size: 12px; color: var(–text-soft); margin: 5px 0; }
-.hero-info-row span:last-child { font-weight: 700; color: var(–text-dark); }
+.hero-info-label { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #16653f; margin-bottom: 10px; }
+.hero-info-row { display: -webkit-flex; display: flex; -webkit-justify-content: space-between; justify-content: space-between; gap: 12px; font-size: 12px; color: #627a6d; margin: 5px 0; }
+.hero-info-row span:last-child { font-weight: 700; color: #0f1c14; }
 .online-dot { position: absolute; top: -5px; right: -5px; width: 13px; height: 13px; background: #22c55e; border-radius: 50%; border: 2px solid white; }
-.online-dot::after { content: ‘’; position: absolute; inset: -3px; background: rgba(34,197,94,.3); border-radius: 50%; animation: ripple 2s infinite; }
+.online-dot::after { content: ‘’; position: absolute; top: -3px; left: -3px; right: -3px; bottom: -3px; background: rgba(34,197,94,0.3); border-radius: 50%; -webkit-animation: ripple 2s infinite; animation: ripple 2s infinite; }
 
 .hero-doctolib-pill {
 position: absolute; top: 36px; right: 24px;
 background: white; border-radius: 10px; padding: 12px 16px;
-box-shadow: 0 4px 20px rgba(0,0,0,.1);
-display: flex; align-items: center; gap: 10px; z-index: 3;
-animation: slideDown .6s .75s both;
+box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+display: -webkit-flex;
+display: flex;
+-webkit-align-items: center;
+align-items: center;
+gap: 10px; z-index: 3;
+-webkit-animation: slideDown 0.6s 0.75s both;
+animation: slideDown 0.6s 0.75s both;
 }
 .pill-dot { width: 10px; height: 10px; background: #0596D5; border-radius: 50%; flex-shrink: 0; }
-.pill-text { font-size: 12px; color: var(–text-soft); line-height: 1.4; }
-.pill-text strong { display: block; font-size: 13px; font-weight: 700; color: var(–text-dark); }
+.pill-text { font-size: 12px; color: #627a6d; line-height: 1.4; }
+.pill-text strong { display: block; font-size: 13px; font-weight: 700; color: #0f1c14; }
 
-/* ════════ SECTIONS ════════ */
+/* ════ SECTIONS ════ */
 .section-wrap { padding: 96px 80px; }
-.bg-white { background: var(–white); }
-.bg-gray  { background: var(–bg-section); }
-.bg-dark  { background: var(–dark-section); }
+.bg-white { background: #ffffff; }
+.bg-gray  { background: #f4f8f5; }
+.bg-dark  { background: #0c1810; }
 
 .section-eyebrow {
-display: inline-flex; align-items: center; gap: 8px;
-font-size: 11px; font-weight: 700; letter-spacing: .12em;
-text-transform: uppercase; color: var(–green); margin-bottom: 14px;
+display: -webkit-inline-flex;
+display: inline-flex;
+-webkit-align-items: center;
+align-items: center;
+gap: 8px;
+font-size: 11px; font-weight: 700; letter-spacing: 0.12em;
+text-transform: uppercase; color: #16653f; margin-bottom: 14px;
 }
-.section-eyebrow::before { content: ‘’; width: 20px; height: 2px; background: var(–green); border-radius: 2px; }
+.section-eyebrow::before { content: ‘’; width: 20px; height: 2px; background: #16653f; border-radius: 2px; }
 .section-eyebrow.light { color: #86efac; }
 .section-eyebrow.light::before { background: #86efac; }
 
 .section-title {
 font-family: ‘Lora’, serif;
 font-size: clamp(28px, 3.5vw, 42px); font-weight: 700; line-height: 1.15;
-color: var(–text-dark); margin-bottom: 16px;
+color: #0f1c14; margin-bottom: 16px;
 }
 .section-title.on-dark { color: #ffffff; }
-.section-title em { color: var(–green); font-style: italic; }
+.section-title em { color: #16653f; font-style: italic; }
 .section-title.on-dark em { color: #86efac; }
-
-.section-sub { font-size: 16px; line-height: 1.8; color: var(–text-soft); max-width: 560px; }
+.section-sub { font-size: 16px; line-height: 1.8; color: #627a6d; max-width: 560px; }
 .section-sub.on-dark { color: #6b9f82; }
 
-/* ════════ LEISTUNGEN ════════ */
+/* ════ LEISTUNGEN ════ */
 .leistungen-header { margin-bottom: 52px; }
-.leistungen-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-
+.leistungen-grid {
+display: -webkit-flex; display: flex;
+-webkit-flex-wrap: wrap; flex-wrap: wrap;
+gap: 20px;
+}
 .leistung-card {
-background: var(–white); border: 1px solid var(–border); border-radius: 12px;
-padding: 32px 28px; transition: box-shadow .3s, border-color .3s, transform .25s;
+background: #ffffff; border: 1px solid #dde8e2; border-radius: 12px;
+padding: 32px 28px;
+transition: box-shadow 0.3s, border-color 0.3s, transform 0.25s;
 cursor: default; position: relative; overflow: hidden;
+width: calc(33.333% - 14px);
 }
 .leistung-card::after {
 content: ‘’; position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
-background: linear-gradient(90deg, var(–green), var(–green-hover));
-transform: scaleX(0); transform-origin: left; transition: transform .35s ease;
+background: linear-gradient(90deg, #16653f, #1a7d4d);
+-webkit-transform: scaleX(0); transform: scaleX(0);
+-webkit-transform-origin: left; transform-origin: left;
+transition: -webkit-transform 0.35s ease; transition: transform 0.35s ease;
 }
-.leistung-card:hover { box-shadow: 0 12px 40px rgba(22,101,63,.1); border-color: var(–green-border); transform: translateY(-4px); }
-.leistung-card:hover::after { transform: scaleX(1); }
-.leistung-num { font-size: 11px; font-weight: 700; letter-spacing: .1em; color: #c8d8cc; text-transform: uppercase; margin-bottom: 16px; }
+.leistung-card:hover { box-shadow: 0 12px 40px rgba(22,101,63,0.1); border-color: #b8d9c8; transform: translateY(-4px); }
+.leistung-card:hover::after { -webkit-transform: scaleX(1); transform: scaleX(1); }
+.leistung-num { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; color: #c8d8cc; text-transform: uppercase; margin-bottom: 16px; }
 .leistung-icon-wrap {
-width: 48px; height: 48px; border-radius: 10px; background: var(–green-light);
-display: flex; align-items: center; justify-content: center; margin-bottom: 18px;
-border: 1px solid var(–green-border);
+width: 48px; height: 48px; border-radius: 10px; background: #eaf5f0;
+display: -webkit-flex; display: flex;
+-webkit-align-items: center; align-items: center;
+-webkit-justify-content: center; justify-content: center;
+margin-bottom: 18px; border: 1px solid #b8d9c8;
 }
-.leistung-title { font-size: 16px; font-weight: 600; color: var(–text-dark); margin-bottom: 10px; line-height: 1.3; }
-.leistung-desc { font-size: 14px; line-height: 1.7; color: var(–text-soft); }
+.leistung-title { font-size: 16px; font-weight: 600; color: #0f1c14; margin-bottom: 10px; line-height: 1.3; }
+.leistung-desc { font-size: 14px; line-height: 1.7; color: #627a6d; }
 
-/* ════════ ÜBER MICH ════════ */
-.ueber-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+/* ════ UEBER MICH ════ */
+.ueber-grid {
+display: -webkit-flex; display: flex;
+gap: 72px;
+-webkit-align-items: center; align-items: center;
+}
+.ueber-left { width: 45%; flex-shrink: 0; position: relative; }
+.ueber-right { flex: 1; }
 
-.ueber-photo-wrap { position: relative; }
 .ueber-photo-frame {
 width: 100%; aspect-ratio: 4/5; border-radius: 16px; overflow: hidden;
-box-shadow: 0 20px 60px rgba(22,101,63,.14); border: 1px solid var(–green-border);
-background: linear-gradient(160deg, var(–green-light) 0%, #c8dfd2 100%);
-display: flex; align-items: center; justify-content: center;
+box-shadow: 0 20px 60px rgba(22,101,63,0.14); border: 1px solid #b8d9c8;
+background: linear-gradient(160deg, #eaf5f0 0%, #c8dfd2 100%);
+display: -webkit-flex; display: flex;
+-webkit-align-items: center; align-items: center;
+-webkit-justify-content: center; justify-content: center;
 }
 .ueber-photo-frame img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
 .ueber-accent-box {
 position: absolute; bottom: -16px; right: -16px;
-width: 112px; height: 112px; background: var(–green); border-radius: 14px;
-display: flex; align-items: center; justify-content: center; flex-direction: column; text-align: center; padding: 12px;
-box-shadow: 0 8px 24px rgba(22,101,63,.4);
+width: 112px; height: 112px; background: #16653f; border-radius: 14px;
+display: -webkit-flex; display: flex;
+-webkit-align-items: center; align-items: center;
+-webkit-justify-content: center; justify-content: center;
+-webkit-flex-direction: column; flex-direction: column;
+text-align: center; padding: 12px;
+box-shadow: 0 8px 24px rgba(22,101,63,0.4);
 }
-.ueber-accent-num { font-family: ‘Lora’, serif; font-size: 28px; font-weight: 700; color: #fff; line-height: 1; }
-.ueber-accent-label { font-size: 10px; font-weight: 600; color: rgba(255,255,255,.78); letter-spacing: .05em; text-transform: uppercase; margin-top: 4px; line-height: 1.3; }
+.ueber-accent-num { font-family: ‘Lora’, serif; font-size: 28px; font-weight: 700; color: #ffffff; line-height: 1; }
+.ueber-accent-label { font-size: 10px; font-weight: 600; color: rgba(255,255,255,0.78); letter-spacing: 0.05em; text-transform: uppercase; margin-top: 4px; line-height: 1.3; }
 
-.ueber-intro { font-size: 16px; line-height: 1.85; color: var(–text-mid); margin-bottom: 32px; }
-
-.qual-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
+.ueber-intro { font-size: 16px; line-height: 1.85; color: #2d4a38; margin-bottom: 32px; }
+.qual-list { display: -webkit-flex; display: flex; -webkit-flex-direction: column; flex-direction: column; gap: 10px; margin-bottom: 28px; }
 .qual-item {
-display: flex; gap: 14px; align-items: flex-start; padding: 16px 18px;
-background: var(–bg-section); border-radius: 10px; border: 1px solid var(–border);
-transition: border-color .2s, background .2s;
+display: -webkit-flex; display: flex;
+gap: 14px;
+-webkit-align-items: flex-start; align-items: flex-start;
+padding: 16px 18px;
+background: #f4f8f5; border-radius: 10px; border: 1px solid #dde8e2;
+transition: border-color 0.2s, background 0.2s;
 }
-.qual-item:hover { border-color: var(–green-border); background: var(–green-light); }
+.qual-item:hover { border-color: #b8d9c8; background: #eaf5f0; }
 .qual-icon {
-width: 38px; height: 38px; flex-shrink: 0; background: var(–white);
-border-radius: 8px; display: flex; align-items: center; justify-content: center;
-border: 1px solid var(–border);
+width: 38px; height: 38px; flex-shrink: 0; background: #ffffff;
+border-radius: 8px;
+display: -webkit-flex; display: flex;
+-webkit-align-items: center; align-items: center;
+-webkit-justify-content: center; justify-content: center;
+border: 1px solid #dde8e2;
 }
-.qual-title { font-size: 14px; font-weight: 700; color: var(–text-dark); margin-bottom: 3px; }
-.qual-sub   { font-size: 13px; color: var(–text-soft); }
+.qual-title { font-size: 14px; font-weight: 700; color: #0f1c14; margin-bottom: 3px; }
+.qual-sub   { font-size: 13px; color: #627a6d; }
+.chips { display: -webkit-flex; display: flex; gap: 8px; -webkit-flex-wrap: wrap; flex-wrap: wrap; }
+.chip { padding: 6px 14px; border-radius: 20px; background: #eaf5f0; font-size: 12px; font-weight: 600; color: #16653f; border: 1px solid #b8d9c8; }
 
-.chips { display: flex; gap: 8px; flex-wrap: wrap; }
-.chip {
-padding: 6px 14px; border-radius: 20px; background: var(–green-light);
-font-size: 12px; font-weight: 600; color: var(–green); border: 1px solid var(–green-border);
+/* ════ SPRECHZEITEN ════ */
+.sprechzeiten-grid {
+display: -webkit-flex; display: flex;
+gap: 64px;
+-webkit-align-items: flex-start; align-items: flex-start;
+margin-top: 52px;
 }
-
-/* ════════ SPRECHZEITEN ════════ */
-.sprechzeiten-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; margin-top: 52px; }
+.sprechzeiten-col { flex: 1; }
 
 .hours-list { margin-top: 8px; }
 .hours-item {
-display: flex; align-items: flex-start; gap: 12px;
-padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,.06);
+display: -webkit-flex; display: flex;
+-webkit-align-items: flex-start; align-items: flex-start;
+gap: 12px; padding: 14px 0;
+border-bottom: 1px solid rgba(255,255,255,0.06);
 }
-.hours-item:first-child { border-top: 1px solid rgba(255,255,255,.06); }
-.hours-day  { font-size: 15px; color: #7a9f8a; min-width: 100px; padding-top: 3px; }
+.hours-item:first-child { border-top: 1px solid rgba(255,255,255,0.06); }
+.hours-day  { font-size: 15px; color: #7a9f8a; min-width: 105px; padding-top: 3px; }
 .hours-dot  { width: 8px; height: 8px; border-radius: 50%; background: #22c55e; flex-shrink: 0; margin-top: 7px; }
 .hours-dot.off { background: #2d4a38; }
-.hours-times { display: flex; flex-direction: column; gap: 3px; }
+.hours-times { display: -webkit-flex; display: flex; -webkit-flex-direction: column; flex-direction: column; gap: 3px; }
 .hours-time  { font-size: 14px; font-weight: 700; color: #f0faf4; }
 .hours-time.closed { color: #3d5a47; font-weight: 400; font-style: italic; }
 .hours-break { font-size: 12px; color: #4a7a5c; font-style: italic; }
 
-.contact-col { display: flex; flex-direction: column; gap: 12px; }
+.contact-col { display: -webkit-flex; display: flex; -webkit-flex-direction: column; flex-direction: column; gap: 12px; }
 .contact-box {
-background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.07);
-border-radius: 12px; padding: 18px 20px; display: flex; gap: 14px; align-items: center;
-transition: background .25s, border-color .25s;
+background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+border-radius: 12px; padding: 18px 20px;
+display: -webkit-flex; display: flex;
+gap: 14px;
+-webkit-align-items: center; align-items: center;
+transition: background 0.25s, border-color 0.25s;
 }
-.contact-box:hover { background: rgba(255,255,255,.07); border-color: rgba(134,239,172,.18); }
+.contact-box:hover { background: rgba(255,255,255,0.07); border-color: rgba(134,239,172,0.2); }
 .contact-box-icon {
-width: 42px; height: 42px; flex-shrink: 0; background: rgba(22,101,63,.35);
-border-radius: 10px; display: flex; align-items: center; justify-content: center;
+width: 42px; height: 42px; flex-shrink: 0;
+background: rgba(22,101,63,0.35);
+border-radius: 10px;
+display: -webkit-flex; display: flex;
+-webkit-align-items: center; align-items: center;
+-webkit-justify-content: center; justify-content: center;
 }
-.contact-box-label { font-size: 10px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #86efac; margin-bottom: 4px; }
+.contact-box-label { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #86efac; margin-bottom: 4px; }
 .contact-box-value { font-size: 16px; font-weight: 700; color: #ffffff; }
-.contact-box-value a { color: #ffffff; text-decoration: none; transition: color .2s; }
+.contact-box-value a { color: #ffffff; text-decoration: none; transition: color 0.2s; }
 .contact-box-value a:hover { color: #86efac; }
 .contact-box-sub { font-size: 12px; color: #4a7a5c; margin-top: 2px; }
 
 .doctolib-link {
-display: flex; align-items: center; gap: 14px;
-background: #0596D5; color: white; padding: 17px 22px;
+display: -webkit-flex; display: flex;
+-webkit-align-items: center; align-items: center;
+gap: 14px;
+background: #0596D5; color: #ffffff; padding: 17px 22px;
 border-radius: 10px; text-decoration: none; font-size: 14px; font-weight: 600;
-transition: opacity .2s, transform .2s; margin-top: 4px;
-box-shadow: 0 4px 16px rgba(5,150,213,.3);
+transition: opacity 0.2s, transform 0.2s; margin-top: 4px;
+box-shadow: 0 4px 16px rgba(5,150,213,0.3);
 }
-.doctolib-link:hover { opacity: .92; transform: translateY(-2px); }
+.doctolib-link:hover { opacity: 0.92; transform: translateY(-2px); }
 .doctolib-link-icon {
-width: 38px; height: 38px; background: rgba(255,255,255,.2);
-border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+width: 38px; height: 38px; background: rgba(255,255,255,0.2);
+border-radius: 8px;
+display: -webkit-flex; display: flex;
+-webkit-align-items: center; align-items: center;
+-webkit-justify-content: center; justify-content: center;
+flex-shrink: 0;
 }
 
-/* ════════ ANFAHRT ════════ */
-.anfahrt-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; margin-top: 52px; align-items: start; }
-
+/* ════ ANFAHRT ════ */
+.anfahrt-grid {
+display: -webkit-flex; display: flex;
+gap: 56px; margin-top: 52px;
+-webkit-align-items: flex-start; align-items: flex-start;
+}
+.anfahrt-map { width: 50%; flex-shrink: 0; }
 .map-box {
-border-radius: 14px; overflow: hidden; border: 1px solid var(–border);
-aspect-ratio: 4/3; box-shadow: 0 8px 32px rgba(22,101,63,.1);
+border-radius: 14px; overflow: hidden; border: 1px solid #dde8e2;
+aspect-ratio: 4/3;
+box-shadow: 0 8px 32px rgba(22,101,63,0.1);
 }
-.map-box iframe { width: 100%; height: 100%; display: block; border: none; }
+.map-box iframe { width: 100%; height: 100%; display: block; border: 0; }
 
-.anfahrt-items { display: flex; flex-direction: column; gap: 12px; }
+.anfahrt-items { flex: 1; display: -webkit-flex; display: flex; -webkit-flex-direction: column; flex-direction: column; gap: 12px; }
 .anfahrt-item {
-display: flex; gap: 14px; padding: 18px 20px;
-background: var(–white); border: 1px solid var(–border); border-radius: 10px;
-transition: border-color .2s, box-shadow .2s, background .2s;
+display: -webkit-flex; display: flex;
+gap: 14px; padding: 18px 20px;
+background: #ffffff; border: 1px solid #dde8e2; border-radius: 10px;
+transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
 }
-.anfahrt-item:hover { border-color: var(–green-border); box-shadow: 0 4px 16px rgba(22,101,63,.07); background: var(–green-light); }
+.anfahrt-item:hover { border-color: #b8d9c8; box-shadow: 0 4px 16px rgba(22,101,63,0.07); background: #eaf5f0; }
 .anfahrt-item-icon {
-width: 40px; height: 40px; flex-shrink: 0; background: var(–green-light);
-border-radius: 8px; display: flex; align-items: center; justify-content: center;
-border: 1px solid var(–green-border);
+width: 40px; height: 40px; flex-shrink: 0; background: #eaf5f0;
+border-radius: 8px;
+display: -webkit-flex; display: flex;
+-webkit-align-items: center; align-items: center;
+-webkit-justify-content: center; justify-content: center;
+border: 1px solid #b8d9c8;
 }
-.anfahrt-item-title { font-size: 12px; font-weight: 700; color: var(–green); text-transform: uppercase; letter-spacing: .07em; margin-bottom: 5px; }
-.anfahrt-item-text  { font-size: 14px; color: var(–text-soft); line-height: 1.6; }
+.anfahrt-item-title { font-size: 12px; font-weight: 700; color: #16653f; text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 5px; }
+.anfahrt-item-text  { font-size: 14px; color: #627a6d; line-height: 1.6; }
 
 .map-open-btn {
-display: inline-flex; align-items: center; gap: 8px; margin-top: 4px;
-padding: 11px 22px; background: var(–green); color: white; border-radius: 7px;
+display: -webkit-inline-flex; display: inline-flex;
+-webkit-align-items: center; align-items: center;
+gap: 8px; margin-top: 4px;
+padding: 11px 22px; background: #16653f; color: #ffffff; border-radius: 7px;
 text-decoration: none; font-size: 13px; font-weight: 600;
-transition: background .2s, transform .15s;
-box-shadow: 0 4px 14px rgba(22,101,63,.25);
+transition: background 0.2s, transform 0.15s;
+box-shadow: 0 4px 14px rgba(22,101,63,0.25);
 }
-.map-open-btn:hover { background: var(–green-hover); transform: translateY(-1px); }
+.map-open-btn:hover { background: #1a7d4d; transform: translateY(-1px); }
 
-/* ════════ FOOTER ════════ */
-footer { background: var(–dark-section); padding: 48px 80px 28px; }
+/* ════ FOOTER ════ */
+footer { background: #0c1810; padding: 48px 80px 28px; }
 .footer-top {
-display: flex; justify-content: space-between; align-items: flex-start;
-padding-bottom: 28px; border-bottom: 1px solid rgba(255,255,255,.07);
-margin-bottom: 24px; gap: 40px; flex-wrap: wrap;
+display: -webkit-flex; display: flex;
+-webkit-justify-content: space-between; justify-content: space-between;
+-webkit-align-items: flex-start; align-items: flex-start;
+padding-bottom: 28px; border-bottom: 1px solid rgba(255,255,255,0.07);
+margin-bottom: 24px; gap: 40px; -webkit-flex-wrap: wrap; flex-wrap: wrap;
 }
-.footer-brand-name { font-family: ‘Lora’, serif; font-size: 18px; font-weight: 600; color: #fff; }
+.footer-brand-name { font-family: ‘Lora’, serif; font-size: 18px; font-weight: 600; color: #ffffff; }
 .footer-brand-sub  { font-size: 12px; color: #3d6649; margin-top: 4px; }
-.footer-links { display: flex; gap: 28px; flex-wrap: wrap; align-items: center; }
-.footer-links a { font-size: 13px; color: #4a7a5c; text-decoration: none; transition: color .2s; }
+.footer-links { display: -webkit-flex; display: flex; gap: 28px; -webkit-flex-wrap: wrap; flex-wrap: wrap; -webkit-align-items: center; align-items: center; }
+.footer-links a { font-size: 13px; color: #4a7a5c; text-decoration: none; transition: color 0.2s; }
 .footer-links a:hover { color: #86efac; }
-.footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+.footer-bottom { display: -webkit-flex; display: flex; -webkit-justify-content: space-between; justify-content: space-between; -webkit-align-items: center; align-items: center; -webkit-flex-wrap: wrap; flex-wrap: wrap; gap: 8px; }
 .footer-copy { font-size: 12px; color: #3d5a47; }
 .footer-note { font-size: 11px; color: #2d4a38; text-align: right; line-height: 1.6; }
 
-/* ════════ ANIMATIONS ════════ */
-@keyframes fadeUp    { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
-@keyframes fadeIn    { from { opacity:0; }                             to { opacity:1; } }
-@keyframes slideUp   { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
-@keyframes slideDown { from { opacity:0; transform:translateY(-16px); } to { opacity:1; transform:translateY(0); } }
-@keyframes ripple    { 0%,100%{ transform:scale(1); opacity:.5; } 50%{ transform:scale(1.8); opacity:0; } }
+/* ════ ANIMATIONS ════ */
+@-webkit-keyframes fadeUp    { from { opacity:0; -webkit-transform:translateY(20px); transform:translateY(20px); } to { opacity:1; -webkit-transform:translateY(0); transform:translateY(0); } }
+@keyframes fadeUp            { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+@-webkit-keyframes fadeIn    { from { opacity:0; } to { opacity:1; } }
+@keyframes fadeIn            { from { opacity:0; } to { opacity:1; } }
+@-webkit-keyframes slideUp   { from { opacity:0; -webkit-transform:translateY(16px); transform:translateY(16px); } to { opacity:1; -webkit-transform:translateY(0); transform:translateY(0); } }
+@keyframes slideUp           { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
+@-webkit-keyframes slideDown { from { opacity:0; -webkit-transform:translateY(-16px); transform:translateY(-16px); } to { opacity:1; -webkit-transform:translateY(0); transform:translateY(0); } }
+@keyframes slideDown         { from { opacity:0; transform:translateY(-16px); } to { opacity:1; transform:translateY(0); } }
+@-webkit-keyframes ripple    { 0%,100%{ -webkit-transform:scale(1); transform:scale(1); opacity:0.5; } 50%{ -webkit-transform:scale(1.8); transform:scale(1.8); opacity:0; } }
+@keyframes ripple            { 0%,100%{ transform:scale(1); opacity:0.5; } 50%{ transform:scale(1.8); opacity:0; } }
 
-.reveal { opacity:0; transform:translateY(24px); transition: opacity .65s ease, transform .65s ease; }
-.reveal.visible { opacity:1; transform:none; }
+.reveal { opacity:0; -webkit-transform:translateY(24px); transform:translateY(24px); transition: opacity 0.65s ease, -webkit-transform 0.65s ease, transform 0.65s ease; }
+.reveal.visible { opacity:1; -webkit-transform:none; transform:none; }
 
-/* ════════ RESPONSIVE ════════ */
+/* ════ MOBILE NAV ════ */
+.nav-mobile-open {
+display: -webkit-flex !important;
+display: flex !important;
+-webkit-flex-direction: column; flex-direction: column;
+position: fixed; top: 72px; left: 0; right: 0;
+background: rgba(255,255,255,0.98); padding: 20px 24px; gap: 8px;
+border-bottom: 1px solid #dde8e2; z-index: 199;
+box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+}
+.nav-mobile-open li { list-style: none; }
+.nav-mobile-open a {
+font-size: 15px !important; padding: 12px 16px !important;
+border-radius: 8px; display: block;
+color: #2d4a38; font-weight: 500;
+}
+.nav-mobile-open a:hover { background: #eaf5f0; color: #16653f; }
+
+/* ════ RESPONSIVE ════ */
 @media (max-width: 1100px) {
 nav { padding: 0 32px; }
 .section-wrap { padding: 72px 40px; }
 .hero-left { padding: 60px 40px; }
-.leistungen-grid { grid-template-columns: repeat(2, 1fr); }
-.ueber-grid, .sprechzeiten-grid, .anfahrt-grid { grid-template-columns: 1fr; gap: 40px; }
+.leistung-card { width: calc(50% - 10px); }
+.ueber-grid { -webkit-flex-direction: column; flex-direction: column; gap: 40px; }
+.ueber-left { width: 100%; }
+.sprechzeiten-grid { -webkit-flex-direction: column; flex-direction: column; gap: 40px; }
+.anfahrt-grid { -webkit-flex-direction: column; flex-direction: column; gap: 40px; }
+.anfahrt-map { width: 100%; }
 footer { padding: 48px 40px 28px; }
 }
 @media (max-width: 860px) {
-#hero { grid-template-columns: 1fr; }
-.hero-right { min-height: 400px; }
+#hero { -webkit-flex-direction: column; flex-direction: column; }
+.hero-left { width: 100%; }
+.hero-right { width: 100%; min-height: 400px; }
 }
 @media (max-width: 640px) {
 nav { padding: 0 20px; }
 .nav-links { display: none; }
-.nav-hamburger { display: flex; }
+.nav-hamburger { display: -webkit-flex; display: flex; }
 .hero-left { padding: 40px 20px; }
 .section-wrap { padding: 60px 20px; }
-.leistungen-grid { grid-template-columns: 1fr; }
-.hero-stats { gap: 24px; flex-wrap: wrap; }
+.leistung-card { width: 100%; }
+.hero-stats { gap: 24px; -webkit-flex-wrap: wrap; flex-wrap: wrap; }
 footer { padding: 40px 20px 24px; }
-.footer-top { flex-direction: column; }
-.footer-bottom { flex-direction: column; text-align: center; }
+.footer-top { -webkit-flex-direction: column; flex-direction: column; }
+.footer-bottom { -webkit-flex-direction: column; flex-direction: column; text-align: center; }
 .footer-note { text-align: center; }
 .hours-day { min-width: 80px; }
+.nav-cta span { display: none; }
 }
-
-.nav-mobile-open {
-display: flex !important; flex-direction: column;
-position: fixed; top: 68px; left: 0; right: 0;
-background: rgba(255,255,255,.98); padding: 20px 24px; gap: 20px;
-border-bottom: 1px solid var(–border); z-index: 199;
-box-shadow: 0 8px 32px rgba(0,0,0,.1); backdrop-filter: blur(12px);
-}
-.nav-mobile-open a { font-size: 16px !important; padding: 8px 0; border-bottom: 1px solid var(–border); }
-
 </style>
+
 </head>
 <body>
 
-<!-- ══ EMERGENCY BANNER ══ -->
+<!-- EMERGENCY BANNER -->
 
 <div class="emergency-banner">
   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fca5a5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-  <strong>Notfall?</strong> Notruf <a href="tel:112">112</a> · Ärztlicher Bereitschaftsdienst <a href="tel:116117">116 117</a>
+  <strong>Notfall?</strong>&nbsp; Notruf <a href="tel:112">112</a> &nbsp;&middot;&nbsp; Aerztlicher Bereitschaftsdienst <a href="tel:116117">116 117</a>
 </div>
 
-<!-- ══ NAV ══ -->
+<!-- NAV -->
 
 <nav id="navbar">
   <a class="nav-logo" href="#">
     <div class="nav-logo-icon">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
     </div>
     <div>
       <div class="nav-logo-name">Dr. med. Victoria Yar</div>
-      <div class="nav-logo-sub">Hausärztin · Hamburg</div>
+      <div class="nav-logo-sub">Hausaerztin &middot; Hamburg</div>
     </div>
   </a>
+
   <ul class="nav-links" id="navLinks">
     <li><a href="#leistungen">Leistungen</a></li>
-    <li><a href="#ueber">Über mich</a></li>
+    <li><a href="#ueber">Ueber mich</a></li>
     <li><a href="#sprechzeiten">Sprechzeiten</a></li>
     <li><a href="#anfahrt">Anfahrt</a></li>
   </ul>
+
   <a class="nav-cta" href="https://www.doctolib.de/einzelpraxis/hamburg/hausarztpraxis-yar-victoria" target="_blank">
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-    Termin buchen
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+    <span>Termin buchen</span>
   </a>
+
   <div class="nav-hamburger" id="hamburger" onclick="toggleMenu()">
     <span></span><span></span><span></span>
   </div>
 </nav>
 
-<!-- ══ HERO ══ -->
+<!-- HERO -->
 
 <section id="hero">
   <div class="hero-left">
     <div class="hero-eyebrow">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-      Hausarztpraxis · Hamburg Barmbek
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#16653f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      Hausarztpraxis &middot; Hamburg Barmbek
     </div>
-    <h1 class="hero-h1">Ihre Gesundheit<br>in <em>guten Händen.</em></h1>
+    <h1 class="hero-h1">Ihre Gesundheit<br>in <em>guten Haenden.</em></h1>
     <p class="hero-desc">
-      Dr. med. Victoria Yar – Fachärztin für Allgemeinmedizin in Hamburg.
-      Persönliche, ganzheitliche Betreuung für die gesamte Familie –
+      Dr. med. Victoria Yar &ndash; Facharztin fur Allgemeinmedizin in Hamburg.
+      Personliche, ganzheitliche Betreuung fur die gesamte Familie &ndash;
       von der Vorsorge bis zur spezialisierten Behandlung.
     </p>
     <div class="hero-buttons">
       <a class="btn-green" href="https://www.doctolib.de/einzelpraxis/hamburg/hausarztpraxis-yar-victoria" target="_blank">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
         Online Termin buchen
       </a>
       <a class="btn-ghost" href="#leistungen">
@@ -510,7 +730,7 @@ box-shadow: 0 8px 32px rgba(0,0,0,.1); backdrop-filter: blur(12px);
     <div class="hero-stats">
       <div><div class="hero-stat-value">20+</div><div class="hero-stat-label">Jahre Erfahrung</div></div>
       <div><div class="hero-stat-value">2</div><div class="hero-stat-label">Fachrichtungen</div></div>
-      <div><div class="hero-stat-value">∅ 3 Tage</div><div class="hero-stat-label">bis zum Termin</div></div>
+      <div><div class="hero-stat-value">&#8960; 3 Tage</div><div class="hero-stat-label">bis zum Termin</div></div>
     </div>
   </div>
 
@@ -521,9 +741,9 @@ box-shadow: 0 8px 32px rgba(0,0,0,.1); backdrop-filter: blur(12px);
     <div class="hero-info-card">
       <div class="online-dot"></div>
       <div class="hero-info-label">Sprechzeiten</div>
-      <div class="hero-info-row"><span>Mo, Di, Do Vorm.</span><span>08:30 – 12:00</span></div>
-      <div class="hero-info-row"><span>Mo, Di, Do Nachm.</span><span>15:00 – 17:30</span></div>
-      <div class="hero-info-row"><span>Mi &amp; Fr</span><span>08:30 – 12:00</span></div>
+      <div class="hero-info-row"><span>Mo, Di, Do Vorm.</span><span>08:30 &ndash; 12:00</span></div>
+      <div class="hero-info-row"><span>Mo, Di, Do Nachm.</span><span>15:00 &ndash; 17:30</span></div>
+      <div class="hero-info-row"><span>Mi &amp; Fr</span><span>08:30 &ndash; 12:00</span></div>
     </div>
     <div class="hero-doctolib-pill">
       <div class="pill-dot"></div>
@@ -532,70 +752,70 @@ box-shadow: 0 8px 32px rgba(0,0,0,.1); backdrop-filter: blur(12px);
   </div>
 </section>
 
-<!-- ══ LEISTUNGEN ══ -->
+<!-- LEISTUNGEN -->
 
 <section id="leistungen">
   <div class="section-wrap bg-gray">
     <div class="leistungen-header reveal">
       <div class="section-eyebrow">Was wir anbieten</div>
       <h2 class="section-title">Unsere <em>Leistungen</em></h2>
-      <p class="section-sub">Umfassende medizinische Betreuung unter einem Dach – individuell, ganzheitlich und auf dem neuesten Stand der Wissenschaft.</p>
+      <p class="section-sub">Umfassende medizinische Betreuung unter einem Dach &ndash; individuell, ganzheitlich und auf dem neuesten Stand der Wissenschaft.</p>
     </div>
     <div class="leistungen-grid">
 
 ```
-  <div class="leistung-card reveal" style="transition-delay:.05s">
+  <div class="leistung-card reveal" style="transition-delay:0.05s">
     <div class="leistung-num">01</div>
     <div class="leistung-icon-wrap">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#16653f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
     </div>
     <div class="leistung-title">Allgemeinmedizin</div>
-    <p class="leistung-desc">Erste Anlaufstelle für alle gesundheitlichen Anliegen. Individuelle und ganzheitliche Beratung für die gesamte Familie.</p>
+    <p class="leistung-desc">Erste Anlaufstelle fuer alle gesundheitlichen Anliegen. Individuelle und ganzheitliche Beratung fuer die gesamte Familie.</p>
   </div>
 
-  <div class="leistung-card reveal" style="transition-delay:.1s">
+  <div class="leistung-card reveal" style="transition-delay:0.1s">
     <div class="leistung-num">02</div>
     <div class="leistung-icon-wrap">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#16653f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
     </div>
     <div class="leistung-title">Vorsorge &amp; Check-ups</div>
-    <p class="leistung-desc">Regelmäßige Gesundheitsuntersuchungen und Früherkennungsmaßnahmen – Prävention steht bei uns im Vordergrund.</p>
+    <p class="leistung-desc">Regelmaessige Gesundheitsuntersuchungen und Frueherkennungsmassnahmen &ndash; Praevention steht bei uns im Vordergrund.</p>
   </div>
 
-  <div class="leistung-card reveal" style="transition-delay:.15s">
+  <div class="leistung-card reveal" style="transition-delay:0.15s">
     <div class="leistung-num">03</div>
     <div class="leistung-icon-wrap">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#16653f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v7.31"/><path d="M14 9.3V1.99"/><path d="M8.5 2h7"/><path d="M14 9.3a6.5 6.5 0 1 1-4 0"/></svg>
     </div>
     <div class="leistung-title">Impfungen</div>
-    <p class="leistung-desc">Standard- und Reiseimpfungen für Kinder und Erwachsene. Umfassende Beratung zu allen empfohlenen Impfungen.</p>
+    <p class="leistung-desc">Standard- und Reiseimpfungen fuer Kinder und Erwachsene. Umfassende Beratung zu allen empfohlenen Impfungen.</p>
   </div>
 
-  <div class="leistung-card reveal" style="transition-delay:.2s">
+  <div class="leistung-card reveal" style="transition-delay:0.2s">
     <div class="leistung-num">04</div>
     <div class="leistung-icon-wrap">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#16653f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M4.93 4.93l14.14 14.14"/></svg>
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#16653f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
     </div>
     <div class="leistung-title">Akupunktur</div>
-    <p class="leistung-desc">Ganzheitliche Therapie bei Schmerzen, Migräne, Allergien und Stress. Traditionelle Heilmethode, modern eingesetzt.</p>
+    <p class="leistung-desc">Ganzheitliche Therapie bei Schmerzen, Migraene, Allergien und Stress. Traditionelle Heilmethode, modern eingesetzt.</p>
   </div>
 
-  <div class="leistung-card reveal" style="transition-delay:.25s">
+  <div class="leistung-card reveal" style="transition-delay:0.25s">
     <div class="leistung-num">05</div>
     <div class="leistung-icon-wrap">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#16653f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21 4 19 2c-2-2-4-2-5.5-.5L10 5 1.8 6.2a1 1 0 0 0-.7 1l.8 4.6c.1.5.4.9.8 1L6 14l-1 5.6a1 1 0 0 0 1 1.2l4-.2c.5 0 .9-.3 1.1-.7l2-3.5 2.5 2.5a1 1 0 0 0 1.5.3l.8-.3a1 1 0 0 0 .7-1.5z"/></svg>
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#16653f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
     </div>
     <div class="leistung-title">Reiseimpfberatung</div>
-    <p class="leistung-desc">Individuelle Beratung und Impfungen für Ihre Reise ins Ausland – als Selbstzahlerleistung mit umfassendem Reiseschutz.</p>
+    <p class="leistung-desc">Individuelle Beratung und Impfungen fuer Ihre Reise ins Ausland &ndash; als Selbstzahlerleistung mit umfassendem Reiseschutz.</p>
   </div>
 
-  <div class="leistung-card reveal" style="transition-delay:.3s">
+  <div class="leistung-card reveal" style="transition-delay:0.3s">
     <div class="leistung-num">06</div>
     <div class="leistung-icon-wrap">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#16653f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 0v20M2 12h20"/></svg>
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#16653f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M7 12h10"/><path d="M12 7v10"/></svg>
     </div>
     <div class="leistung-title">Transfusionsmedizin</div>
-    <p class="leistung-desc">Fachärztliche Expertise in der Transfusionsmedizin als ergänzende Spezialisierung zu unserer hausärztlichen Tätigkeit.</p>
+    <p class="leistung-desc">Facharzliche Expertise in der Transfusionsmedizin als ergaenzende Spezialisierung zu unserer hausarzlichen Taetigkeit.</p>
   </div>
 
 </div>
@@ -604,14 +824,14 @@ box-shadow: 0 8px 32px rgba(0,0,0,.1); backdrop-filter: blur(12px);
   </div>
 </section>
 
-<!-- ══ ÜBER MICH ══ -->
+<!-- UEBER MICH -->
 
 <section id="ueber">
   <div class="section-wrap bg-white">
     <div class="ueber-grid">
 
 ```
-  <div class="ueber-photo-wrap reveal">
+  <div class="ueber-left reveal">
     <div class="ueber-photo-frame">
       <img src="doctor-photo.jpg" alt="Dr. med. Victoria Yar">
     </div>
@@ -621,13 +841,13 @@ box-shadow: 0 8px 32px rgba(0,0,0,.1); backdrop-filter: blur(12px);
     </div>
   </div>
 
-  <div class="reveal" style="transition-delay:.15s">
-    <div class="section-eyebrow">Über die Ärztin</div>
+  <div class="ueber-right reveal" style="transition-delay:0.15s">
+    <div class="section-eyebrow">Ueber die Aerztin</div>
     <h2 class="section-title">Dr. med. (univ.)<br><em>Victoria Yar</em></h2>
     <p class="ueber-intro">
-      Als Fachärztin für Allgemeinmedizin und Transfusionsmedizin begleite ich meine Patientinnen
+      Als Facharztin fuer Allgemeinmedizin und Transfusionsmedizin begleite ich meine Patientinnen
       und Patienten mit Kompetenz und echtem Engagement. Mein Ziel ist es, Ihre Gesundheit in jeder
-      Lebensphase zu unterstützen – von der Geburt bis ins hohe Alter.
+      Lebensphase zu unterstuetzen &ndash; von der Geburt bis ins hohe Alter.
     </p>
     <div class="qual-list">
       <div class="qual-item">
@@ -636,7 +856,7 @@ box-shadow: 0 8px 32px rgba(0,0,0,.1); backdrop-filter: blur(12px);
         </div>
         <div>
           <div class="qual-title">Studium der Humanmedizin</div>
-          <div class="qual-sub">Universität Budapest · Dr. med. (univ.)</div>
+          <div class="qual-sub">Universitaet Budapest &middot; Dr. med. (univ.)</div>
         </div>
       </div>
       <div class="qual-item">
@@ -644,17 +864,17 @@ box-shadow: 0 8px 32px rgba(0,0,0,.1); backdrop-filter: blur(12px);
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16653f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
         </div>
         <div>
-          <div class="qual-title">Fachärztin für Allgemeinmedizin</div>
+          <div class="qual-title">Facharztin fuer Allgemeinmedizin</div>
           <div class="qual-sub">Niedergelassene Praxis in Hamburg Barmbek</div>
         </div>
       </div>
       <div class="qual-item">
         <div class="qual-icon">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16653f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="12" rx="10" ry="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16653f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
         </div>
         <div>
-          <div class="qual-title">Fachärztin für Transfusionsmedizin</div>
-          <div class="qual-sub">Zusätzliche medizinische Fachspezialisierung</div>
+          <div class="qual-title">Facharztin fuer Transfusionsmedizin</div>
+          <div class="qual-sub">Zusaetzliche medizinische Fachspezialisierung</div>
         </div>
       </div>
     </div>
@@ -672,41 +892,41 @@ box-shadow: 0 8px 32px rgba(0,0,0,.1); backdrop-filter: blur(12px);
   </div>
 </section>
 
-<!-- ══ SPRECHZEITEN & KONTAKT ══ -->
+<!-- SPRECHZEITEN -->
 
 <section id="sprechzeiten">
   <div class="section-wrap bg-dark">
     <div class="reveal">
-      <div class="section-eyebrow light">Wann wir für Sie da sind</div>
+      <div class="section-eyebrow light">Wann wir fuer Sie da sind</div>
       <h2 class="section-title on-dark">Sprechzeiten &amp; <em>Kontakt</em></h2>
     </div>
     <div class="sprechzeiten-grid">
 
 ```
-  <div class="reveal" style="transition-delay:.1s">
-    <p class="section-sub on-dark" style="margin-bottom:20px;">Termine bequem online über Doctolib oder telefonisch vereinbaren.</p>
+  <div class="sprechzeiten-col reveal" style="transition-delay:0.1s">
+    <p class="section-sub on-dark" style="margin-bottom:20px;">Termine bequem online ueber Doctolib oder telefonisch vereinbaren.</p>
     <div class="hours-list">
       <div class="hours-item">
         <span class="hours-day">Montag</span>
         <div class="hours-dot"></div>
         <div class="hours-times">
-          <span class="hours-time">08:30 – 12:00 Uhr</span>
-          <span class="hours-time">15:00 – 17:30 Uhr</span>
+          <span class="hours-time">08:30 &ndash; 12:00 Uhr</span>
+          <span class="hours-time">15:00 &ndash; 17:30 Uhr</span>
         </div>
       </div>
       <div class="hours-item">
         <span class="hours-day">Dienstag</span>
         <div class="hours-dot"></div>
         <div class="hours-times">
-          <span class="hours-time">08:30 – 12:00 Uhr</span>
-          <span class="hours-time">15:00 – 17:30 Uhr</span>
+          <span class="hours-time">08:30 &ndash; 12:00 Uhr</span>
+          <span class="hours-time">15:00 &ndash; 17:30 Uhr</span>
         </div>
       </div>
       <div class="hours-item">
         <span class="hours-day">Mittwoch</span>
         <div class="hours-dot"></div>
         <div class="hours-times">
-          <span class="hours-time">08:30 – 12:00 Uhr</span>
+          <span class="hours-time">08:30 &ndash; 12:00 Uhr</span>
           <span class="hours-break">Kein Nachmittag</span>
         </div>
       </div>
@@ -714,15 +934,15 @@ box-shadow: 0 8px 32px rgba(0,0,0,.1); backdrop-filter: blur(12px);
         <span class="hours-day">Donnerstag</span>
         <div class="hours-dot"></div>
         <div class="hours-times">
-          <span class="hours-time">08:30 – 12:00 Uhr</span>
-          <span class="hours-time">15:00 – 17:30 Uhr</span>
+          <span class="hours-time">08:30 &ndash; 12:00 Uhr</span>
+          <span class="hours-time">15:00 &ndash; 17:30 Uhr</span>
         </div>
       </div>
       <div class="hours-item">
         <span class="hours-day">Freitag</span>
         <div class="hours-dot"></div>
         <div class="hours-times">
-          <span class="hours-time">08:30 – 12:00 Uhr</span>
+          <span class="hours-time">08:30 &ndash; 12:00 Uhr</span>
           <span class="hours-break">Kein Nachmittag</span>
         </div>
       </div>
@@ -739,7 +959,7 @@ box-shadow: 0 8px 32px rgba(0,0,0,.1); backdrop-filter: blur(12px);
     </div>
   </div>
 
-  <div class="contact-col reveal" style="transition-delay:.15s">
+  <div class="contact-col reveal" style="transition-delay:0.15s">
     <div class="contact-box">
       <div class="contact-box-icon">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#86efac" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.06 6.06l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
@@ -756,8 +976,8 @@ box-shadow: 0 8px 32px rgba(0,0,0,.1); backdrop-filter: blur(12px);
       </div>
       <div>
         <div class="contact-box-label">Adresse</div>
-        <div class="contact-box-value">Hufnerstraße 101</div>
-        <div class="contact-box-sub">22305 Hamburg · Barmbek-Nord</div>
+        <div class="contact-box-value">Hufnerstrasse 101</div>
+        <div class="contact-box-sub">22305 Hamburg &middot; Barmbek-Nord</div>
       </div>
     </div>
     <div class="contact-box">
@@ -772,7 +992,7 @@ box-shadow: 0 8px 32px rgba(0,0,0,.1); backdrop-filter: blur(12px);
     </div>
     <a class="doctolib-link" href="https://www.doctolib.de/einzelpraxis/hamburg/hausarztpraxis-yar-victoria" target="_blank">
       <div class="doctolib-link-icon">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
       </div>
       Jetzt online Termin buchen via Doctolib
     </a>
@@ -784,7 +1004,7 @@ box-shadow: 0 8px 32px rgba(0,0,0,.1); backdrop-filter: blur(12px);
   </div>
 </section>
 
-<!-- ══ ANFAHRT ══ -->
+<!-- ANFAHRT -->
 
 <section id="anfahrt">
   <div class="section-wrap bg-gray">
@@ -795,24 +1015,24 @@ box-shadow: 0 8px 32px rgba(0,0,0,.1); backdrop-filter: blur(12px);
     <div class="anfahrt-grid">
 
 ```
-  <div class="map-box reveal">
+  <div class="anfahrt-map map-box reveal">
     <iframe
-      title="Praxis Dr. Victoria Yar – Karte"
+      title="Praxis Dr. Victoria Yar"
       loading="lazy"
       allowfullscreen
       referrerpolicy="no-referrer-when-downgrade"
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2368.5540469503635!2d10.032969315765!3d53.587819080016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b18f0c5e7e9c99%3A0x1a2b3c4d5e6f7a8b!2sHufnerstra%C3%9Fe%20101%2C%2022305%20Hamburg!5e0!3m2!1sde!2sde!4v1716100000000!5m2!1sde!2sde">
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2368.55!2d10.033!3d53.5878!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b18f0c5e7e9c99%3A0x1a2b3c4d5e6f7a8b!2sHufnerstra%C3%9Fe%20101%2C%2022305%20Hamburg!5e0!3m2!1sde!2sde!4v1716100000000!5m2!1sde!2sde">
     </iframe>
   </div>
 
-  <div class="anfahrt-items reveal" style="transition-delay:.15s">
+  <div class="anfahrt-items reveal" style="transition-delay:0.15s">
     <div class="anfahrt-item">
       <div class="anfahrt-item-icon">
         <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#16653f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
       </div>
       <div>
         <div class="anfahrt-item-title">U-Bahn</div>
-        <div class="anfahrt-item-text">U3 Haltestelle <strong>Barmbek</strong> – ca. 5 Minuten Fußweg entlang der Hufnerstraße.</div>
+        <div class="anfahrt-item-text">U3 Haltestelle <strong>Barmbek</strong> &ndash; ca. 5 Minuten Fussweg entlang der Hufnerstrasse.</div>
       </div>
     </div>
     <div class="anfahrt-item">
@@ -821,7 +1041,7 @@ box-shadow: 0 8px 32px rgba(0,0,0,.1); backdrop-filter: blur(12px);
       </div>
       <div>
         <div class="anfahrt-item-title">Bus</div>
-        <div class="anfahrt-item-text">Linien <strong>20, 172, 173</strong> – Haltestelle Hufnerstraße direkt vor der Tür.</div>
+        <div class="anfahrt-item-text">Linien <strong>20, 172, 173</strong> &ndash; Haltestelle Hufnerstrasse direkt vor der Tuer.</div>
       </div>
     </div>
     <div class="anfahrt-item">
@@ -830,12 +1050,12 @@ box-shadow: 0 8px 32px rgba(0,0,0,.1); backdrop-filter: blur(12px);
       </div>
       <div>
         <div class="anfahrt-item-title">Auto &amp; Parkplatz</div>
-        <div class="anfahrt-item-text">Parkplätze in der Hufnerstraße und den umliegenden Nebenstraßen vorhanden.</div>
+        <div class="anfahrt-item-text">Parkplaetze in der Hufnerstrasse und den umliegenden Nebenstrassen vorhanden.</div>
       </div>
     </div>
-    <a class="map-open-btn" href="https://maps.google.com/?q=Hufnerstraße+101,+22305+Hamburg" target="_blank">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-      In Google Maps öffnen
+    <a class="map-open-btn" href="https://maps.google.com/?q=Hufnerstrasse+101,+22305+Hamburg" target="_blank">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      In Google Maps oeffnen
     </a>
   </div>
 
@@ -845,17 +1065,17 @@ box-shadow: 0 8px 32px rgba(0,0,0,.1); backdrop-filter: blur(12px);
   </div>
 </section>
 
-<!-- ══ FOOTER ══ -->
+<!-- FOOTER -->
 
 <footer>
   <div class="footer-top">
     <div>
       <div class="footer-brand-name">Praxis Dr. med. Victoria Yar</div>
-      <div class="footer-brand-sub">Fachärztin für Allgemeinmedizin &amp; Transfusionsmedizin · Hamburg</div>
+      <div class="footer-brand-sub">Facharztin fuer Allgemeinmedizin &amp; Transfusionsmedizin &middot; Hamburg</div>
     </div>
     <div class="footer-links">
       <a href="#leistungen">Leistungen</a>
-      <a href="#ueber">Über mich</a>
+      <a href="#ueber">Ueber mich</a>
       <a href="#sprechzeiten">Kontakt</a>
       <a href="#anfahrt">Anfahrt</a>
       <a href="#">Impressum</a>
@@ -863,39 +1083,42 @@ box-shadow: 0 8px 32px rgba(0,0,0,.1); backdrop-filter: blur(12px);
     </div>
   </div>
   <div class="footer-bottom">
-    <div class="footer-copy">© 2026 Praxis Dr. med. Victoria Yar · Hufnerstraße 101, 22305 Hamburg</div>
-    <div class="footer-note">Online-Termine via Doctolib verfügbar<br>Nur medizinische Informationen – keine Rechtsberatung</div>
+    <div class="footer-copy">&copy; 2026 Praxis Dr. med. Victoria Yar &middot; Hufnerstrasse 101, 22305 Hamburg</div>
+    <div class="footer-note">Online-Termine via Doctolib verfuegbar<br>Nur medizinische Informationen &ndash; keine Rechtsberatung</div>
   </div>
 </footer>
 
 <script>
-  const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nav-links a');
+  var sections = document.querySelectorAll('section[id]');
+  var navLinks = document.querySelectorAll('.nav-links a');
 
-  window.addEventListener('scroll', () => {
-    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 10);
-    let current = '';
-    sections.forEach(sec => { if (window.scrollY >= sec.offsetTop - 100) current = sec.id; });
-    navLinks.forEach(a => { a.classList.toggle('active', a.getAttribute('href') === '#' + current); });
+  window.addEventListener('scroll', function() {
+    var navbar = document.getElementById('navbar');
+    if (window.scrollY > 10) { navbar.classList.add('scrolled'); } else { navbar.classList.remove('scrolled'); }
+    var current = '';
+    sections.forEach(function(sec) { if (window.scrollY >= sec.offsetTop - 100) current = sec.id; });
+    navLinks.forEach(function(a) {
+      if (a.getAttribute('href') === '#' + current) { a.classList.add('active'); } else { a.classList.remove('active'); }
+    });
   });
 
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.1 });
-  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
 
-  let menuOpen = false;
+  var menuOpen = false;
   function toggleMenu() {
-    const links = document.getElementById('navLinks');
-    const hamburger = document.getElementById('hamburger');
+    var links = document.getElementById('navLinks');
+    var hamburger = document.getElementById('hamburger');
     menuOpen = !menuOpen;
-    links.classList.toggle('nav-mobile-open', menuOpen);
+    if (menuOpen) { links.classList.add('nav-mobile-open'); } else { links.classList.remove('nav-mobile-open'); }
     hamburger.children[0].style.transform = menuOpen ? 'rotate(45deg) translate(5px,5px)' : '';
     hamburger.children[1].style.opacity   = menuOpen ? '0' : '';
     hamburger.children[2].style.transform = menuOpen ? 'rotate(-45deg) translate(5px,-5px)' : '';
   }
-  navLinks.forEach(a => { a.addEventListener('click', () => { if (menuOpen) toggleMenu(); }); });
-  document.addEventListener('click', e => { if (menuOpen && !e.target.closest('nav')) toggleMenu(); });
+  navLinks.forEach(function(a) { a.addEventListener('click', function() { if (menuOpen) toggleMenu(); }); });
+  document.addEventListener('click', function(e) { if (menuOpen && !e.target.closest('nav')) toggleMenu(); });
 </script>
 
 </body>
