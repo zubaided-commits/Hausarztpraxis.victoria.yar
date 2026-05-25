@@ -88,7 +88,7 @@ nav.scrolled{box-shadow:0 2px 20px rgba(14,66,41,.09)}
 .doc-pill-txt strong{display:block;font-size:13px;font-weight:700;color:#0f1c14}
 
 /* ── SECTIONS ── */
-.sw{padding:90px 80px;overflow:hidden}
+.sw{padding:90px 80px}
 .bg-w{background:#fff}
 .bg-g{background:#f4f8f5}
 .bg-d{background:#0c1810}
@@ -105,7 +105,7 @@ nav.scrolled{box-shadow:0 2px 20px rgba(14,66,41,.09)}
 
 /* ── LEISTUNGEN ── */
 .l-hdr{margin-bottom:48px}
-.l-grid{display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;flex-wrap:wrap;gap:18px;overflow:hidden}
+.l-grid{display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;flex-wrap:wrap;gap:18px}
 .l-card{background:#fff;border:1px solid #dde8e2;border-radius:12px;padding:28px 24px;transition:box-shadow .3s,border-color .3s,transform .25s;cursor:default;position:relative;overflow:hidden;width:calc(33.333% - 12px)}
 .l-card::after{content:’’;position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#16653f,#1a7d4d);-webkit-transform:scaleX(0);transform:scaleX(0);-webkit-transform-origin:left;transform-origin:left;transition:-webkit-transform .35s ease;transition:transform .35s ease}
 .l-card:hover{box-shadow:0 12px 40px rgba(22,101,63,.1);border-color:#b8d9c8;transform:translateY(-4px)}
@@ -197,8 +197,8 @@ footer{background:#0c1810;padding:48px 80px 28px}
 @keyframes slideDown{from{opacity:0;transform:translateY(-16px)}to{opacity:1;transform:translateY(0)}}
 @-webkit-keyframes ripple{0%,100%{-webkit-transform:scale(1);transform:scale(1);opacity:.5}50%{-webkit-transform:scale(1.8);transform:scale(1.8);opacity:0}}
 @keyframes ripple{0%,100%{transform:scale(1);opacity:.5}50%{transform:scale(1.8);opacity:0}}
-.reveal{opacity:0;-webkit-transform:translateY(24px);transform:translateY(24px);transition:opacity .65s ease,-webkit-transform .65s ease,transform .65s ease}
-.reveal.visible{opacity:1;-webkit-transform:none;transform:none}
+.reveal{opacity:0;visibility:hidden;-webkit-transform:translateY(24px);transform:translateY(24px);transition:opacity .65s ease,visibility .65s ease,-webkit-transform .65s ease,transform .65s ease}
+.reveal.visible{opacity:1;visibility:visible;-webkit-transform:none;transform:none}
 
 /* ── MOBILE NAV ── */
 .mob-open{display:-webkit-flex !important;display:flex !important;-webkit-flex-direction:column;flex-direction:column;position:fixed;top:70px;left:0;right:0;background:rgba(255,255,255,.98);padding:16px 20px;gap:4px;border-bottom:1px solid #dde8e2;z-index:199;box-shadow:0 8px 32px rgba(0,0,0,.1)}
