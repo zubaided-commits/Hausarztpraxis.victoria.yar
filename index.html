@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Hausarztpraxis Dr. med. Victoria Yar in Hamburg Barmbek. Fach&auml;rztin f&uuml;r Allgemeinmedizin. Online Termin via Doctolib. GKV &amp; Privatpatienten.">
-<meta name="keywords" content="Hausarzt Hamburg, Hausarztpraxis Barmbek, Dr. Victoria Yar, Allgemeinmedizin Hamburg, Arzt Barmbek, Termin Hausarzt Hamburg">
+<meta name="description" content="Hausarztpraxis Dr. med. Victoria Yar in Hamburg Barmbek. Fach&auml;rztin f&uuml;r Allgemeinmedizin &amp; Transfusionsmedizin. Akupunktur, Sonographie, Kardiologie, Reiseimpfberatung. GKV &amp; Privatpatienten. Online-Termin via Doctolib.">
+<meta name="keywords" content="Hausarzt Hamburg, Hausarztpraxis Barmbek, Dr. Victoria Yar, Allgemeinmedizin Hamburg, Akupunktur Hamburg, Akupunktur Barmbek, Hausarzt Barmbek, Arzt Hamburg Barmbek, Sonographie Hamburg, Kardiologie Hausarzt, Reiseimpfung Hamburg, Transfusionsmedizin Hamburg, Hausarzt online Termin Hamburg">
 <meta name="author" content="Dr. med. Victoria Yar">
 <meta name="robots" content="index, follow">
 <meta property="og:title" content="Praxis Dr. med. Victoria Yar - Haus&auml;rztin Hamburg">
@@ -12,9 +12,11 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://zubaided-commits.github.io/Hausarztpraxis.victoria.yar/">
 <meta property="og:locale" content="de_DE">
+<meta property="og:image" content="https://zubaided-commits.github.io/Hausarztpraxis.victoria.yar/doctor-photo.jpg">
+
 <link rel="canonical" href="https://zubaided-commits.github.io/Hausarztpraxis.victoria.yar/">
 
-<title>Praxis Dr. med. Victoria Yar - Haus&auml;rztin Hamburg Barmbek</title>
+<title>Hausarztpraxis Dr. Victoria Yar Hamburg | Allgemeinmedizin &amp; Akupunktur Barmbek</title>
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -248,7 +250,93 @@ footer{background:#0c1810;padding:48px 80px 28px}
 .l-card{-webkit-animation:cardFadeIn .5s ease both;animation:cardFadeIn .5s ease both}
 @-webkit-keyframes cardFadeIn{from{opacity:0;-webkit-transform:translateY(16px);transform:translateY(16px)}to{opacity:1;-webkit-transform:none;transform:none}}
 @keyframes cardFadeIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+
+/* ── AKUPUNKTUR FEATURED CARD ── */
+.l-card-featured{
+  background:#fff;
+  border:2px solid #16653f !important;
+  border-radius:14px;
+  box-shadow:0 8px 32px rgba(22,101,63,.15);
+  position:relative;
+}
+.l-card-featured::before{
+  content:'Schwerpunkt';
+  position:absolute;
+  top:-12px;
+  left:24px;
+  background:#16653f;
+  color:#fff;
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  padding:3px 12px;
+  border-radius:20px;
+}
+.l-card-featured .l-icon{
+  background:#16653f;
+  border-color:#16653f;
+}
+.l-card-featured .l-icon svg{
+  stroke:#ffffff;
+}
+.l-card-featured .l-title{
+  color:#16653f;
+}
 </style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  "name": "Hausarztpraxis Dr. med. Victoria Yar",
+  "alternateName": "Praxis Dr. Victoria Yar Hamburg",
+  "description": "Hausarztpraxis in Hamburg Barmbek. Allgemeinmedizin, Transfusionsmedizin, Akupunktur, Sonographie, Kardiologie und Reiseimpfberatung.",
+  "url": "https://zubaided-commits.github.io/Hausarztpraxis.victoria.yar/",
+  "telephone": "+4940-611-7010",
+  "email": "info.hausarztpraxisdryar@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Hufnerstra\u00dfe 101",
+    "addressLocality": "Hamburg",
+    "addressRegion": "Hamburg",
+    "postalCode": "22305",
+    "addressCountry": "DE"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 53.5878,
+    "longitude": 10.033
+  },
+  "openingHoursSpecification": [
+    {"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:30","closes":"18:00"},
+    {"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:30","closes":"17:30"},
+    {"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:30","closes":"12:00"},
+    {"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:30","closes":"17:30"},
+    {"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:30","closes":"12:00"}
+  ],
+  "medicalSpecialty": ["Allgemeinmedizin","Transfusionsmedizin","Akupunktur"],
+  "availableService": [
+    {"@type":"MedicalTherapy","name":"Akupunktur"},
+    {"@type":"MedicalTherapy","name":"Sonographie"},
+    {"@type":"MedicalProcedure","name":"Ruhe-EKG"},
+    {"@type":"MedicalProcedure","name":"Langzeit-EKG"},
+    {"@type":"MedicalProcedure","name":"Reiseimpfberatung"}
+  ],
+  "employee": {
+    "@type": "Physician",
+    "name": "Dr. med. Victoria Yar",
+    "jobTitle": "Fach\u00e4rztin f\u00fcr Allgemeinmedizin & Transfusionsmedizin",
+    "knowsLanguage": ["de","en","fa","ps","hu"]
+  },
+  "paymentAccepted": "GKV, Privatversicherung",
+  "priceRange": "GKV & Privat",
+  "currenciesAccepted": "EUR",
+  "hasMap": "https://maps.google.com/?q=Hufnerstra%C3%9Fe+101,+22305+Hamburg",
+  "image": "https://zubaided-commits.github.io/Hausarztpraxis.victoria.yar/doctor-photo.jpg",
+  "areaServed": ["Hamburg Barmbek","Hamburg","Hamburg Nord"]
+}
+</script>
 </head>
 <body>
 
@@ -287,6 +375,7 @@ footer{background:#0c1810;padding:48px 80px 28px}
 <!-- HERO -->
 <section id="hero">
   <div class="hero-left">
+    <h1 style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap">Hausarztpraxis Dr. Victoria Yar Hamburg Barmbek &ndash; Allgemeinmedizin, Akupunktur &amp; mehr</h1>
     <div class="hero-eyebrow">
       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#16653f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
       Hausarztpraxis &middot; Hamburg Barmbek
@@ -370,12 +459,12 @@ footer{background:#0c1810;padding:48px 80px 28px}
         <p class="l-desc">Standard- und Reiseimpfungen f&uuml;r Kinder und Erwachsene. Wir beraten Sie umfassend zu allen empfohlenen Schutzimpfungen.</p>
       </div>
 
-      <div class="l-card">
+      <div class="l-card l-card-featured">
                 <div class="l-icon">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#16653f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
         </div>
-        <div class="l-title">Akupunktur</div>
-        <p class="l-desc">Ganzheitliche Behandlung bei Schmerzen, Migr&auml;ne, Allergien und Stress &ndash; traditionelle Heilmethode, gezielt und modern eingesetzt.</p>
+        <h2 class="l-title" style="font-size:16px;font-weight:600;margin-bottom:8px">Akupunktur Hamburg</h2>
+        <p class="l-desc">Ganzheitliche Behandlung bei Schmerzen, Migr&auml;ne, Allergien und Stress. Wir setzen Akupunktur gezielt nach den Prinzipien der Traditionellen Chinesischen Medizin (TCM) ein &ndash; modern und evidenzbasiert. Geeignet als Erg&auml;nzung zur Schulmedizin.</p>
       </div>
 
       <div class="l-card">
