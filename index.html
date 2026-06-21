@@ -64,10 +64,10 @@ nav.scrolled{box-shadow:0 2px 20px rgba(14,66,41,.09)}
 
 /* ── HERO ── */
 #hero{min-height:calc(100vh - 70px - 41px);position:relative;overflow:hidden;background:#0c1810}
-.hero-left{position:absolute;top:0;left:0;height:100%;width:min(680px,62%);padding:0 0 0 80px;display:-webkit-flex;display:flex;-webkit-flex-direction:column;flex-direction:column;-webkit-justify-content:center;justify-content:center;z-index:5}
-.hero-left::after{content:'';position:absolute;inset:0;z-index:-2;background:#fff;-webkit-mask-image:linear-gradient(90deg,#000 0%,#000 55%,transparent 100%);mask-image:linear-gradient(90deg,#000 0%,#000 55%,transparent 100%)}
-.hero-left::before{content:'';position:absolute;inset:0;z-index:-1;background-image:radial-gradient(circle,#b8d9c8 1px,transparent 1px);background-size:28px 28px;-webkit-mask-image:linear-gradient(90deg,#000 0%,#000 55%,transparent 100%);mask-image:linear-gradient(90deg,#000 0%,#000 55%,transparent 100%);opacity:.25;pointer-events:none}
-.hero-left>*{padding-right:140px;position:relative;z-index:1}
+.hero-left{position:absolute;top:0;left:0;height:100%;width:min(680px,62%);padding:0 0 0 80px;display:-webkit-flex;display:flex;-webkit-flex-direction:column;flex-direction:column;-webkit-justify-content:center;justify-content:center;z-index:3}
+.hero-left-bg{position:absolute;inset:0;z-index:1;background:-webkit-linear-gradient(left,#fff 0%,#fff 55%,rgba(255,255,255,0) 100%);background:linear-gradient(90deg,#fff 0%,#fff 55%,rgba(255,255,255,0) 100%)}
+.hero-left::before{content:'';position:absolute;inset:0;z-index:2;background-image:radial-gradient(circle,#b8d9c8 1px,transparent 1px);background-size:28px 28px;-webkit-mask-image:linear-gradient(90deg,#000 0%,#000 55%,transparent 100%);mask-image:linear-gradient(90deg,#000 0%,#000 55%,transparent 100%);opacity:.25;pointer-events:none}
+.hero-left>*{padding-right:140px;position:relative;z-index:3}
 .hero-eyebrow{display:-webkit-inline-flex;display:inline-flex;-webkit-align-items:center;align-items:center;gap:8px;background:#eaf5f0;color:#16653f;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:6px 14px;border-radius:20px;margin-bottom:28px;width:-webkit-fit-content;width:fit-content;border:1px solid #b8d9c8;opacity:0;-webkit-animation:fadeUp .6s .1s forwards;animation:fadeUp .6s .1s forwards;position:relative;z-index:1}
 .hero-h1{font-family:'Lora',Georgia,serif;font-size:clamp(34px,4vw,52px);font-weight:700;line-height:1.1;color:#0f1c14;margin-bottom:24px;opacity:0;-webkit-animation:fadeUp .6s .2s forwards;animation:fadeUp .6s .2s forwards;position:relative;z-index:1}
 .hero-h1 em{color:#16653f;font-style:italic}
@@ -236,7 +236,7 @@ footer{background:#0c1810;padding:48px 80px 28px}
 @media(max-width:860px){
   #hero{display:block;min-height:0}
   .hero-left{position:relative;top:auto;left:auto;height:auto;width:100%;padding:48px 28px;background:#fff}
-  .hero-left::after{display:none}
+  .hero-left-bg{display:none}
   .hero-left::before{display:none}
   .hero-right{position:relative;inset:auto;width:100%;height:340px;order:-1}
   .hero-photo-fade{display:none}
@@ -384,7 +384,7 @@ footer{background:#0c1810;padding:48px 80px 28px}
 <!-- HERO -->
 <section id="hero">
   <div class="hero-left">
-    <h1 style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap">Hausarztpraxis Dr. Victoria Yar Hamburg Barmbek &ndash; Allgemeinmedizin, Akupunktur &amp; mehr</h1>
+    <div class="hero-left-bg"></div>    <h1 style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap">Hausarztpraxis Dr. Victoria Yar Hamburg Barmbek &ndash; Allgemeinmedizin, Akupunktur &amp; mehr</h1>
     <div class="hero-eyebrow">
       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#16653f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
       Hausarztpraxis &middot; Hamburg Barmbek
