@@ -106,17 +106,16 @@ nav.scrolled{box-shadow:0 2px 20px rgba(14,66,41,.09)}
 
 
 /* ── KONTAKT / ANFRAGE ── */
-.k-grid{display:-webkit-flex;display:flex;gap:56px;-webkit-align-items:flex-start;align-items:flex-start}
-.k-info{width:38%;-webkit-flex-shrink:0;flex-shrink:0}
-.k-info-item{display:-webkit-flex;display:flex;gap:16px;-webkit-align-items:flex-start;align-items:flex-start;margin-bottom:28px}
-.k-info-icon{width:42px;height:42px;border-radius:10px;background:#eaf5f0;border:1px solid #b8d9c8;display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;-webkit-justify-content:center;justify-content:center;-webkit-flex-shrink:0;flex-shrink:0}
-.k-info-lbl{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#627a6d;margin-bottom:3px}
-.k-info-val{font-size:15px;font-weight:600;color:#0f1c14;line-height:1.5}
-.k-info-sub{font-size:13px;color:#627a6d;margin-top:2px}
-.k-note{background:#eaf5f0;border:1px solid #b8d9c8;border-radius:10px;padding:16px 18px;margin-top:32px;font-size:13px;line-height:1.7;color:#2d4a38}
-.k-note strong{display:block;margin-bottom:4px;font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:#16653f}
+.k-layout{display:-webkit-flex;display:flex;gap:56px;-webkit-align-items:flex-start;align-items:flex-start}
+.k-left{width:52%;-webkit-flex-shrink:0;flex-shrink:0}
+.k-right{-webkit-flex:1;flex:1;-webkit-align-self:stretch;align-self:stretch;display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;-webkit-justify-content:center;justify-content:center}
 
-.k-form-wrap{-webkit-flex:1;flex:1;background:#fff;border:1px solid #dde8e2;border-radius:16px;padding:40px 36px;box-shadow:0 8px 32px rgba(15,28,20,.06)}
+/* Photo placeholder – replaced by real image later */
+.k-photo-placeholder{width:100%;min-height:420px;border-radius:16px;background:#eaf5f0;border:2px dashed #b8d9c8;display:-webkit-flex;display:flex;-webkit-flex-direction:column;flex-direction:column;-webkit-align-items:center;align-items:center;-webkit-justify-content:center;justify-content:center;gap:12px;color:#627a6d;font-size:14px;text-align:center;padding:24px}
+.k-photo-placeholder svg{opacity:.4}
+.k-photo-placeholder span{font-weight:600;color:#16653f;font-size:13px;letter-spacing:.05em;text-transform:uppercase}
+
+.k-form-wrap{background:#fff;border:1px solid #dde8e2;border-radius:16px;padding:40px 36px;box-shadow:0 8px 32px rgba(15,28,20,.06)}
 .k-form-row{display:-webkit-flex;display:flex;gap:16px}
 .k-form-group{display:-webkit-flex;display:flex;-webkit-flex-direction:column;flex-direction:column;margin-bottom:20px;-webkit-flex:1;flex:1}
 .k-form-group label{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#627a6d;margin-bottom:7px}
@@ -135,8 +134,10 @@ nav.scrolled{box-shadow:0 2px 20px rgba(14,66,41,.09)}
 .k-honey{display:none}
 
 @media(max-width:960px){
-  .k-grid{-webkit-flex-direction:column;flex-direction:column;gap:40px}
-  .k-info{width:100%}
+  .k-layout{-webkit-flex-direction:column;flex-direction:column;gap:40px}
+  .k-left{width:100%}
+  .k-right{width:100%;min-height:280px}
+  .k-photo-placeholder{min-height:260px}
   .k-form-wrap{padding:28px 20px}
 }
 @media(max-width:640px){
@@ -641,10 +642,11 @@ footer{background:#0c1810;padding:48px 80px 28px}
       <h2 class="sec-title">Schreiben Sie <em>uns an</em></h2>
       <p class="sec-sub">Haben Sie Fragen oder m&ouml;chten Sie einen R&uuml;ckruf vereinbaren? Wir melden uns schnellstm&ouml;glich bei Ihnen &ndash; bitte beachten Sie, dass wir keine medizinischen Notf&auml;lle &uuml;ber dieses Formular bearbeiten k&ouml;nnen.</p>
     </div>
-    <div class="reveal" style="transition-delay:.1s">
+    <div class="k-layout reveal" style="transition-delay:.1s">
 
-      <!-- Form only – contact info is already in Sprechzeiten section -->
-      <div class="k-form-wrap" style="max-width:760px;margin:0 auto">
+      <!-- LEFT: Form -->
+      <div class="k-left">
+        <div class="k-form-wrap">
         <div id="kSuccess" class="k-success">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#16653f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:8px"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><br>
           Vielen Dank! Ihre Nachricht wurde erfolgreich gesendet. Wir melden uns bald bei Ihnen.
@@ -701,9 +703,22 @@ footer{background:#0c1810;padding:48px 80px 28px}
             Nachricht senden
           </button>
         </form>
-      </div>
+        </div><!-- /k-form-wrap -->
+      </div><!-- /k-left -->
 
-    </div>
+      <!-- RIGHT: Photo – replace the placeholder with your image later -->
+      <div class="k-right">
+        <div class="k-photo-placeholder" id="kPhotoSlot">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#16653f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/>
+            <polyline points="21 15 16 10 5 21"/>
+          </svg>
+          <span>Foto folgt</span>
+          <p style="margin:0;font-size:12px;color:#9dc4ad;max-width:180px">Hier erscheint Ihr Foto, sobald Sie es hochladen</p>
+        </div>
+      </div><!-- /k-right -->
+
+    </div><!-- /k-layout -->
   </div>
 </section>
 
