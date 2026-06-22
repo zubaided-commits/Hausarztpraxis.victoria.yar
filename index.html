@@ -104,6 +104,45 @@ nav.scrolled{box-shadow:0 2px 20px rgba(14,66,41,.09)}
   .hero-section{padding:40px 20px}
 }
 
+
+/* ── KONTAKT / ANFRAGE ── */
+.k-grid{display:-webkit-flex;display:flex;gap:56px;-webkit-align-items:flex-start;align-items:flex-start}
+.k-info{width:38%;-webkit-flex-shrink:0;flex-shrink:0}
+.k-info-item{display:-webkit-flex;display:flex;gap:16px;-webkit-align-items:flex-start;align-items:flex-start;margin-bottom:28px}
+.k-info-icon{width:42px;height:42px;border-radius:10px;background:#eaf5f0;border:1px solid #b8d9c8;display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;-webkit-justify-content:center;justify-content:center;-webkit-flex-shrink:0;flex-shrink:0}
+.k-info-lbl{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#627a6d;margin-bottom:3px}
+.k-info-val{font-size:15px;font-weight:600;color:#0f1c14;line-height:1.5}
+.k-info-sub{font-size:13px;color:#627a6d;margin-top:2px}
+.k-note{background:#eaf5f0;border:1px solid #b8d9c8;border-radius:10px;padding:16px 18px;margin-top:32px;font-size:13px;line-height:1.7;color:#2d4a38}
+.k-note strong{display:block;margin-bottom:4px;font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:#16653f}
+
+.k-form-wrap{-webkit-flex:1;flex:1;background:#fff;border:1px solid #dde8e2;border-radius:16px;padding:40px 36px;box-shadow:0 8px 32px rgba(15,28,20,.06)}
+.k-form-row{display:-webkit-flex;display:flex;gap:16px}
+.k-form-group{display:-webkit-flex;display:flex;-webkit-flex-direction:column;flex-direction:column;margin-bottom:20px;-webkit-flex:1;flex:1}
+.k-form-group label{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#627a6d;margin-bottom:7px}
+.k-form-group input,.k-form-group textarea,.k-form-group select{width:100%;padding:12px 16px;background:#f9fbfa;border:1.5px solid #dde8e2;border-radius:8px;font-size:15px;color:#0f1c14;font-family:inherit;outline:none;transition:border-color .2s,box-shadow .2s;-webkit-appearance:none}
+.k-form-group input:focus,.k-form-group textarea:focus,.k-form-group select:focus{border-color:#16653f;box-shadow:0 0 0 3px rgba(22,101,63,.1);background:#fff}
+.k-form-group textarea{resize:vertical;min-height:130px;line-height:1.65}
+.k-checkbox{display:-webkit-flex;display:flex;gap:12px;-webkit-align-items:flex-start;align-items:flex-start;margin-bottom:24px;cursor:pointer}
+.k-checkbox input[type=checkbox]{width:18px;height:18px;margin-top:2px;accent-color:#16653f;-webkit-flex-shrink:0;flex-shrink:0;cursor:pointer}
+.k-checkbox-lbl{font-size:13px;color:#627a6d;line-height:1.6}
+.k-checkbox-lbl a{color:#16653f;text-decoration:underline}
+.k-submit{width:100%;padding:14px 28px;background:#16653f;color:#fff;font-size:15px;font-weight:600;border:none;border-radius:8px;cursor:pointer;transition:background .2s,transform .15s,box-shadow .2s;display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;-webkit-justify-content:center;justify-content:center;gap:10px;box-shadow:0 4px 14px rgba(22,101,63,.3)}
+.k-submit:hover{background:#1a7d4d;transform:translateY(-2px);box-shadow:0 8px 20px rgba(22,101,63,.35)}
+.k-submit:disabled{background:#9dc4ad;cursor:not-allowed;transform:none;box-shadow:none}
+.k-success{display:none;background:#eaf5f0;border:1px solid #b8d9c8;border-radius:10px;padding:20px 24px;text-align:center;color:#16653f;font-weight:600;font-size:15px;margin-top:16px}
+.k-error{display:none;background:#fef2f2;border:1px solid #fecaca;border-radius:10px;padding:16px 20px;text-align:center;color:#b91c1c;font-size:14px;margin-top:16px}
+.k-honey{display:none}
+
+@media(max-width:960px){
+  .k-grid{-webkit-flex-direction:column;flex-direction:column;gap:40px}
+  .k-info{width:100%}
+  .k-form-wrap{padding:28px 20px}
+}
+@media(max-width:640px){
+  .k-form-row{-webkit-flex-direction:column;flex-direction:column;gap:0}
+}
+
 /* ── SECTIONS ── */
 .sw{padding:90px 80px}
 .bg-w{background:#fff}
@@ -632,6 +671,128 @@ footer{background:#0c1810;padding:48px 80px 28px}
 </section>
 
 
+<!-- KONTAKT / ANFRAGE -->
+<section id="kontakt">
+  <div class="sw bg-w">
+    <div class="reveal" style="margin-bottom:48px">
+      <div class="eyebrow">Kontakt &amp; Anfrage</div>
+      <h2 class="sec-title">Schreiben Sie <em>uns an</em></h2>
+      <p class="sec-sub">Haben Sie Fragen oder m&ouml;chten Sie einen R&uuml;ckruf vereinbaren? Wir melden uns schnellstm&ouml;glich bei Ihnen &ndash; bitte beachten Sie, dass wir keine medizinischen Notf&auml;lle &uuml;ber dieses Formular bearbeiten k&ouml;nnen.</p>
+    </div>
+    <div class="k-grid reveal" style="transition-delay:.1s">
+
+      <!-- Left: contact info -->
+      <div class="k-info">
+        <div class="k-info-item">
+          <div class="k-info-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16653f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <div class="k-info-lbl">Adresse</div>
+            <div class="k-info-val">Hufnerstra&szlig;e 101</div>
+            <div class="k-info-sub">22305 Hamburg &middot; Barmbek-Nord</div>
+          </div>
+        </div>
+        <div class="k-info-item">
+          <div class="k-info-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16653f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.1 2.18 2 2 0 012.11 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.09a16 16 0 006 6l.45-.45a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          </div>
+          <div>
+            <div class="k-info-lbl">Telefon</div>
+            <div class="k-info-val">040 / 000 000</div>
+            <div class="k-info-sub">Mo &ndash; Fr 08:30 &ndash; 12:00 Uhr</div>
+          </div>
+        </div>
+        <div class="k-info-item">
+          <div class="k-info-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16653f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div>
+            <div class="k-info-lbl">E-Mail</div>
+            <div class="k-info-val">Info@hausarztpraxis-dr-yar-hamburg.de</div>
+            <div class="k-info-sub">Wir antworten innerhalb von 24 Stunden</div>
+          </div>
+        </div>
+        <div class="k-info-item">
+          <div class="k-info-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16653f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </div>
+          <div>
+            <div class="k-info-lbl">Online-Termin</div>
+            <div class="k-info-val">Jederzeit via Doctolib</div>
+            <div class="k-info-sub"><a href="https://www.doctolib.de/einzelpraxis/hamburg/hausarztpraxis-yar-victoria" target="_blank" style="color:#16653f;text-decoration:underline">Direkt Termin buchen &rarr;</a></div>
+          </div>
+        </div>
+        <div class="k-note">
+          <strong>&#9888;&#65039; Wichtiger Hinweis</strong>
+          Bei medizinischen Notf&auml;llen rufen Sie bitte sofort <strong>112</strong> an oder wenden Sie sich an den &auml;rztlichen Bereitschaftsdienst unter <strong>116&nbsp;117</strong>. Dieses Kontaktformular ist nicht f&uuml;r Notf&auml;lle geeignet.
+        </div>
+      </div>
+
+      <!-- Right: form -->
+      <div class="k-form-wrap">
+        <div id="kSuccess" class="k-success">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#16653f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:8px"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><br>
+          Vielen Dank! Ihre Nachricht wurde erfolgreich gesendet. Wir melden uns bald bei Ihnen.
+        </div>
+        <div id="kError" class="k-error">
+          Leider ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut oder schreiben Sie uns direkt an Info@hausarztpraxis-dr-yar-hamburg.de
+        </div>
+        <form id="kForm" novalidate>
+          <!-- Honeypot anti-spam -->
+          <div class="k-honey"><input type="text" name="website" tabindex="-1" autocomplete="off"></div>
+
+          <div class="k-form-row">
+            <div class="k-form-group">
+              <label for="kName">Vor- &amp; Nachname *</label>
+              <input type="text" id="kName" name="name" placeholder="Max Mustermann" required autocomplete="name">
+            </div>
+            <div class="k-form-group">
+              <label for="kPhone">Telefonnummer</label>
+              <input type="tel" id="kPhone" name="phone" placeholder="040 / 000 000" autocomplete="tel">
+            </div>
+          </div>
+
+          <div class="k-form-group">
+            <label for="kEmail">E-Mail-Adresse *</label>
+            <input type="email" id="kEmail" name="email" placeholder="ihre@email.de" required autocomplete="email">
+          </div>
+
+          <div class="k-form-group">
+            <label for="kSubject">Betreff</label>
+            <select id="kSubject" name="subject">
+              <option value="">Bitte w&auml;hlen&hellip;</option>
+              <option>Allgemeine Anfrage</option>
+              <option>R&uuml;ckruf gew&uuml;nscht</option>
+              <option>Rezept / &Uuml;berweisung</option>
+              <option>Terminanfrage</option>
+              <option>Sonstiges</option>
+            </select>
+          </div>
+
+          <div class="k-form-group">
+            <label for="kMessage">Ihre Nachricht *</label>
+            <textarea id="kMessage" name="message" placeholder="Bitte beschreiben Sie Ihr Anliegen&hellip;" required></textarea>
+          </div>
+
+          <label class="k-checkbox">
+            <input type="checkbox" id="kConsent" name="consent" required>
+            <span class="k-checkbox-lbl">
+              Ich habe die <a href="datenschutz.html">Datenschutzerkl&auml;rung</a> gelesen und stimme der Verarbeitung meiner Daten zur Bearbeitung meiner Anfrage zu. *
+            </span>
+          </label>
+
+          <button type="submit" class="k-submit" id="kSubmit">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            Nachricht senden
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- FOOTER -->
 <footer>
   <div class="ft">
@@ -718,6 +879,51 @@ if (window.AOS) {
     anchorPlacement: 'top-bottom'
   });
 }
+</script>
+
+<script>
+(function(){
+  var form = document.getElementById('kForm');
+  if(!form) return;
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var honey = form.querySelector('input[name="website"]');
+    if(honey && honey.value) return; // spam trap
+    var name = document.getElementById('kName').value.trim();
+    var email = document.getElementById('kEmail').value.trim();
+    var message = document.getElementById('kMessage').value.trim();
+    var consent = document.getElementById('kConsent').checked;
+    if(!name || !email || !message || !consent){
+      document.getElementById('kError').style.display='block';
+      document.getElementById('kError').textContent='Bitte füllen Sie alle Pflichtfelder aus und bestätigen Sie die Datenschutzerklärung.';
+      return;
+    }
+    var btn = document.getElementById('kSubmit');
+    btn.disabled = true;
+    btn.textContent = 'Wird gesendet…';
+    var data = new FormData(form);
+    fetch('send_mail.php', {method:'POST', body:data})
+      .then(function(r){ return r.json(); })
+      .then(function(res){
+        if(res.success){
+          form.style.display='none';
+          document.getElementById('kSuccess').style.display='block';
+          document.getElementById('kError').style.display='none';
+        } else {
+          document.getElementById('kError').style.display='block';
+          document.getElementById('kError').textContent = res.message || 'Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.';
+          btn.disabled=false;
+          btn.textContent='Nachricht senden';
+        }
+      })
+      .catch(function(){
+        document.getElementById('kError').style.display='block';
+        document.getElementById('kError').textContent='Verbindungsfehler. Bitte prüfen Sie Ihre Internetverbindung und versuchen Sie es erneut.';
+        btn.disabled=false;
+        btn.textContent='Nachricht senden';
+      });
+  });
+})();
 </script>
 </body>
 </html>
