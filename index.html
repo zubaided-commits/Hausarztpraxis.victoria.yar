@@ -45,7 +45,9 @@ body{font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;back
 ::-webkit-scrollbar-thumb{background:#b8d9c8;border-radius:3px}
 
 /* ── EMERGENCY BANNER ── */
-.eb{background:#7f1d1d;color:#fef2f2;text-align:center;padding:10px 20px;font-size:13px;font-weight:500;display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;-webkit-justify-content:center;justify-content:center;gap:8px;z-index:300;position:relative}
+.eb{background:#7f1d1d;color:#fef2f2;text-align:center;padding:10px 20px;font-size:13px;font-weight:500;display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;-webkit-justify-content:center;justify-content:center;-webkit-flex-wrap:wrap;flex-wrap:wrap;gap:4px 10px;z-index:300;position:relative}
+.eb-item{white-space:nowrap;display:-webkit-inline-flex;display:inline-flex;-webkit-align-items:center;align-items:center}
+@media(max-width:480px){.eb-sep{display:none}.eb{font-size:12.5px;padding:8px 12px}}
 .eb strong{font-weight:700;color:#fca5a5}
 .eb a{color:#fca5a5;font-weight:700;text-decoration:none}
 .eb a:hover{text-decoration:underline}
@@ -366,8 +368,9 @@ footer{background:#0c1810;padding:48px 80px 28px}
 
 <!-- EMERGENCY BANNER -->
 <div class="eb">
-  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fca5a5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-  <strong>Notfall?</strong>&nbsp; Notruf <a href="tel:112">112</a> &nbsp;&middot;&nbsp; &Auml;rztlicher Bereitschaftsdienst <a href="tel:116117">116&nbsp;117</a>
+  <span class="eb-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fca5a5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>&nbsp;<strong>Notfall?</strong>&nbsp; Notruf <a href="tel:112">112</a></span>
+  <span class="eb-sep">&middot;</span>
+  <span class="eb-item">&Auml;rztlicher Bereitschaftsdienst <a href="tel:116117">116&nbsp;117</a></span>
 </div>
 
 <!-- NAV -->
