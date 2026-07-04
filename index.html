@@ -123,16 +123,32 @@ nav.scrolled{box-shadow:0 2px 20px rgba(14,66,41,.09)}
 .sec-sub{font-size:16px;line-height:1.8;color:#627a6d;max-width:560px}
 .sec-sub.dk{color:#9dc4ad}
 
-/* ── LEISTUNGEN ── */
+/* ── LEISTUNGEN (Accordion) ── */
 .l-hdr{margin-bottom:48px}
-.l-grid{display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;flex-wrap:wrap;gap:18px}
-.l-card{background:#fff;border:1px solid #dde8e2;border-radius:12px;padding:32px 28px;transition:box-shadow .3s,border-color .3s,transform .25s;cursor:default;position:relative;overflow:hidden;width:calc(33.333% - 12px)}
-.l-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#16653f,#1a7d4d);-webkit-transform:scaleX(0);transform:scaleX(0);-webkit-transform-origin:left;transform-origin:left;transition:-webkit-transform .35s ease;transition:transform .35s ease}
-.l-card:hover{box-shadow:0 12px 40px rgba(22,101,63,.1);border-color:#b8d9c8;transform:translateY(-4px)}
-.l-card:hover::after{-webkit-transform:scaleX(1);transform:scaleX(1)}
-.l-icon{width:46px;height:46px;border-radius:10px;background:#eaf5f0;display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;-webkit-justify-content:center;justify-content:center;margin-bottom:16px;border:1px solid #b8d9c8}
-.l-title{font-size:18px;font-weight:600;color:#0f1c14;margin-bottom:10px;line-height:1.3}
-.l-desc{font-size:15px;line-height:1.75;color:#627a6d}
+.l-acc{display:-webkit-flex;display:flex;-webkit-flex-direction:column;flex-direction:column;gap:12px;max-width:860px}
+.acc-item{background:#fff;border:1px solid #dde8e2;border-radius:12px;overflow:hidden;transition:border-color .3s,box-shadow .3s}
+.acc-item:hover{border-color:#b8d9c8}
+.acc-item.open{border-color:#b8d9c8;box-shadow:0 12px 40px rgba(22,101,63,.1)}
+.acc-hdr{width:100%;display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;gap:16px;padding:20px 24px;background:transparent;border:none;cursor:pointer;text-align:left;font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;transition:background .25s}
+.acc-hdr:hover{background:#eaf5f0}
+.acc-item.open .acc-hdr{background:#eaf5f0}
+.acc-icon{width:46px;height:46px;-webkit-flex-shrink:0;flex-shrink:0;border-radius:10px;background:#eaf5f0;display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;-webkit-justify-content:center;justify-content:center;border:1px solid #b8d9c8}
+.acc-item.open .acc-icon{background:#fff}
+.acc-titles{-webkit-flex:1;flex:1;min-width:0}
+.acc-title{display:block;font-size:17px;font-weight:600;color:#0f1c14;line-height:1.35}
+.acc-badge{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#16653f;background:#eaf5f0;border:1px solid #b8d9c8;border-radius:4px;padding:2px 8px;margin-bottom:5px}
+.acc-item.open .acc-badge{background:#fff}
+.acc-chevron{-webkit-flex-shrink:0;flex-shrink:0;transition:-webkit-transform .35s ease;transition:transform .35s ease}
+.acc-item.open .acc-chevron{-webkit-transform:rotate(180deg);transform:rotate(180deg)}
+.acc-panel{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.acc-body{padding:4px 24px 24px 86px;border-top:1px solid transparent}
+.acc-body p{font-size:15px;line-height:1.75;color:#627a6d}
+@media(max-width:640px){
+  .acc-hdr{padding:16px 16px;gap:12px}
+  .acc-icon{width:40px;height:40px}
+  .acc-title{font-size:15.5px}
+  .acc-body{padding:2px 16px 20px 16px}
+}
 
 /* ── UEBER ── */
 .u-grid{display:-webkit-flex;display:flex;gap:64px;-webkit-align-items:center;align-items:center}
@@ -230,7 +246,6 @@ footer{background:#0c1810;padding:48px 80px 28px}
 @media(max-width:1100px){
   nav{padding:0 32px}
   .sw{padding:72px 40px}
-  .l-card{width:calc(50% - 9px)}
   .u-grid{-webkit-flex-direction:column;flex-direction:column;gap:40px}
   .u-left{width:100%}
   .sp-grid{-webkit-flex-direction:column;flex-direction:column;gap:36px}
@@ -243,7 +258,6 @@ footer{background:#0c1810;padding:48px 80px 28px}
   .nav-links{display:none}
   .nav-burger{display:-webkit-flex;display:flex}
   .sw{padding:56px 20px}
-  .l-card{width:100%}
   .hero-stats{gap:24px;-webkit-flex-wrap:wrap;flex-wrap:wrap}
   footer{padding:36px 20px 20px}
   .ft{-webkit-flex-direction:column;flex-direction:column}
@@ -257,8 +271,6 @@ footer{background:#0c1810;padding:48px 80px 28px}
 .btt{position:fixed;bottom:28px;right:24px;z-index:500;width:44px;height:44px;background:#16653f;border:none;border-radius:50%;display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;-webkit-justify-content:center;justify-content:center;cursor:pointer;box-shadow:0 4px 16px rgba(22,101,63,.35);opacity:0;pointer-events:none;transition:opacity .3s,transform .3s,background .2s;transform:translateY(12px)}
 .btt.visible{opacity:1;pointer-events:all;transform:translateY(0)}
 .btt:hover{background:#1a7d4d;transform:translateY(-2px)}
-
-.l-igel{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#16653f;background:#eaf5f0;border:1px solid #b8d9c8;border-radius:4px;padding:2px 8px;margin-bottom:10px}
 
 @-webkit-keyframes cardFadeIn{from{opacity:0;-webkit-transform:translateY(16px);transform:translateY(16px)}to{opacity:1;-webkit-transform:none;transform:none}}
 @keyframes cardFadeIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
@@ -428,66 +440,115 @@ footer{background:#0c1810;padding:48px 80px 28px}
       <h2 class="sec-title">Unsere <em>Leistungen</em></h2>
       <p class="sec-sub">Umfassende medizinische Betreuung unter einem Dach &ndash; von der Allgemeinmedizin &uuml;ber Kardiologie und Sonographie bis zur Reisemedizin und Akupunktur.</p>
     </div>
-    <div class="l-grid">
+    <div class="l-acc">
 
-      <div class="l-card" data-aos="fade-up" data-aos-duration="900" data-aos-easing="ease-out-quad" data-aos-delay="0">
-                <div class="l-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#16653f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
+      <div class="acc-item" data-aos="fade-up" data-aos-duration="900" data-aos-easing="ease-out-quad" data-aos-delay="0">
+        <button class="acc-hdr" type="button" id="accHdr0" aria-expanded="false" aria-controls="accPanel0" onclick="toggleAcc(this)">
+          <span class="acc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#16653f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></span>
+          <span class="acc-titles">
+            <span class="acc-badge">IGeL-Leistung</span>
+          <span class="acc-title">Akupunktur<span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap"> Hamburg</span></span>
+          </span>
+          <svg class="acc-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16653f" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="acc-panel" id="accPanel0" role="region" aria-labelledby="accHdr0">
+          <div class="acc-body">
+            <p>Ganzheitliche Behandlung bei Schmerzen, Migr&auml;ne, Allergien und Stress. Wir setzen Akupunktur gezielt nach den Prinzipien der Traditionellen Chinesischen Medizin (TCM) ein &ndash; modern und evidenzbasiert. Geeignet als Erg&auml;nzung zur Schulmedizin.</p>
+          </div>
         </div>
-        <div class="l-igel">IGeL-Leistung</div>
-        <div class="l-title">Akupunktur<span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap"> Hamburg</span></div>
-        <p class="l-desc">Ganzheitliche Behandlung bei Schmerzen, Migr&auml;ne, Allergien und Stress. Wir setzen Akupunktur gezielt nach den Prinzipien der Traditionellen Chinesischen Medizin (TCM) ein &ndash; modern und evidenzbasiert. Geeignet als Erg&auml;nzung zur Schulmedizin.</p>
       </div>
 
-      <div class="l-card" data-aos="fade-up" data-aos-duration="900" data-aos-easing="ease-out-quad" data-aos-delay="100">
-                <div class="l-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#16653f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      <div class="acc-item" data-aos="fade-up" data-aos-duration="900" data-aos-easing="ease-out-quad" data-aos-delay="60">
+        <button class="acc-hdr" type="button" id="accHdr1" aria-expanded="false" aria-controls="accPanel1" onclick="toggleAcc(this)">
+          <span class="acc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#16653f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></span>
+          <span class="acc-titles">
+            <span class="acc-title">Allgemeinmedizin</span>
+          </span>
+          <svg class="acc-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16653f" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="acc-panel" id="accPanel1" role="region" aria-labelledby="accHdr1">
+          <div class="acc-body">
+            <p>Ihre erste Anlaufstelle f&uuml;r alle gesundheitlichen Anliegen &ndash; individuelle und ganzheitliche Beratung f&uuml;r die gesamte Familie.</p>
+          </div>
         </div>
-        <div class="l-title">Allgemeinmedizin</div>
-        <p class="l-desc">Ihre erste Anlaufstelle f&uuml;r alle gesundheitlichen Anliegen &ndash; individuelle und ganzheitliche Beratung f&uuml;r die gesamte Familie.</p>
       </div>
 
-      <div class="l-card" data-aos="fade-up" data-aos-duration="900" data-aos-easing="ease-out-quad" data-aos-delay="200">
-                <div class="l-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#16653f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <div class="acc-item" data-aos="fade-up" data-aos-duration="900" data-aos-easing="ease-out-quad" data-aos-delay="120">
+        <button class="acc-hdr" type="button" id="accHdr2" aria-expanded="false" aria-controls="accPanel2" onclick="toggleAcc(this)">
+          <span class="acc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#16653f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
+          <span class="acc-titles">
+            <span class="acc-title">Vorsorge &amp; Check-ups</span>
+          </span>
+          <svg class="acc-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16653f" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="acc-panel" id="accPanel2" role="region" aria-labelledby="accHdr2">
+          <div class="acc-body">
+            <p>Regelm&auml;&szlig;ige Gesundheitsuntersuchungen und Fr&uuml;herkennungsma&szlig;nahmen. Pr&auml;vention hat bei uns h&ouml;chste Priorit&auml;t.</p>
+          </div>
         </div>
-        <div class="l-title">Vorsorge &amp; Check-ups</div>
-        <p class="l-desc">Regelm&auml;&szlig;ige Gesundheitsuntersuchungen und Fr&uuml;herkennungsma&szlig;nahmen. Pr&auml;vention hat bei uns h&ouml;chste Priorit&auml;t.</p>
       </div>
 
-      <div class="l-card" data-aos="fade-up" data-aos-duration="900" data-aos-easing="ease-out-quad" data-aos-delay="300">
-                <div class="l-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#16653f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="15 8 19 12 15 16"/><line x1="3" y1="21" x2="21" y2="3"/></svg>
+      <div class="acc-item" data-aos="fade-up" data-aos-duration="900" data-aos-easing="ease-out-quad" data-aos-delay="180">
+        <button class="acc-hdr" type="button" id="accHdr3" aria-expanded="false" aria-controls="accPanel3" onclick="toggleAcc(this)">
+          <span class="acc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#16653f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="15 8 19 12 15 16"/><line x1="3" y1="21" x2="21" y2="3"/></svg></span>
+          <span class="acc-titles">
+            <span class="acc-title">Impfungen</span>
+          </span>
+          <svg class="acc-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16653f" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="acc-panel" id="accPanel3" role="region" aria-labelledby="accHdr3">
+          <div class="acc-body">
+            <p>Standard- und Reiseimpfungen f&uuml;r Kinder und Erwachsene. Wir beraten Sie umfassend zu allen empfohlenen Schutzimpfungen.</p>
+          </div>
         </div>
-        <div class="l-title">Impfungen</div>
-        <p class="l-desc">Standard- und Reiseimpfungen f&uuml;r Kinder und Erwachsene. Wir beraten Sie umfassend zu allen empfohlenen Schutzimpfungen.</p>
       </div>
 
-      <div class="l-card" data-aos="fade-up" data-aos-duration="900" data-aos-easing="ease-out-quad" data-aos-delay="400">
-                <div class="l-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#16653f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      <div class="acc-item" data-aos="fade-up" data-aos-duration="900" data-aos-easing="ease-out-quad" data-aos-delay="240">
+        <button class="acc-hdr" type="button" id="accHdr4" aria-expanded="false" aria-controls="accPanel4" onclick="toggleAcc(this)">
+          <span class="acc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#16653f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
+          <span class="acc-titles">
+            <span class="acc-badge">IGeL-Leistung</span>
+          <span class="acc-title">Reiseimpfberatung</span>
+          </span>
+          <svg class="acc-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16653f" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="acc-panel" id="accPanel4" role="region" aria-labelledby="accHdr4">
+          <div class="acc-body">
+            <p>Individuelle Beratung und Impfungen f&uuml;r Reisen ins Ausland. Wir empfehlen die Buchung als Selbstzahlerleistung f&uuml;r umfassenden Reiseschutz.</p>
+          </div>
         </div>
-        <div class="l-igel">IGeL-Leistung</div>
-        <div class="l-title">Reiseimpfberatung</div>
-        <p class="l-desc">Individuelle Beratung und Impfungen f&uuml;r Reisen ins Ausland. Wir empfehlen die Buchung als Selbstzahlerleistung f&uuml;r umfassenden Reiseschutz.</p>
       </div>
 
-      <div class="l-card" data-aos="fade-up" data-aos-duration="900" data-aos-easing="ease-out-quad" data-aos-delay="600">
-                <div class="l-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#16653f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9a9 9 0 0 1 9-9v0a9 9 0 0 1 9 9"/><path d="M3 15a9 9 0 0 0 9 9v0a9 9 0 0 0 9-9"/><line x1="12" y1="3" x2="12" y2="21"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/></svg>
+      <div class="acc-item" data-aos="fade-up" data-aos-duration="900" data-aos-easing="ease-out-quad" data-aos-delay="300">
+        <button class="acc-hdr" type="button" id="accHdr5" aria-expanded="false" aria-controls="accPanel5" onclick="toggleAcc(this)">
+          <span class="acc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#16653f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9a9 9 0 0 1 9-9v0a9 9 0 0 1 9 9"/><path d="M3 15a9 9 0 0 0 9 9v0a9 9 0 0 0 9-9"/><line x1="12" y1="3" x2="12" y2="21"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/></svg></span>
+          <span class="acc-titles">
+            <span class="acc-badge">GKV &amp; IGeL-Leistung</span>
+          <span class="acc-title">Sonographie (Ultraschall)</span>
+          </span>
+          <svg class="acc-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16653f" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="acc-panel" id="accPanel5" role="region" aria-labelledby="accHdr5">
+          <div class="acc-body">
+            <p>Als IGeL-Leistung bieten wir Ultraschalluntersuchungen der Bauchorgane sowie der Schilddr&uuml;se an. Schmerzfrei, strahlungsfrei und ideal zur fr&uuml;hzeitigen Erkennung m&ouml;glicher Ver&auml;nderungen &ndash; erg&auml;nzend zur regul&auml;ren Vorsorge.</p>
+          </div>
         </div>
-        <div class="l-igel">GKV &amp; IGeL-Leistung</div>
-        <div class="l-title">Sonographie (Ultraschall)</div>
-        <p class="l-desc">Als IGeL-Leistung bieten wir Ultraschalluntersuchungen der Bauchorgane sowie der Schilddr&uuml;se an. Schmerzfrei, strahlungsfrei und ideal zur fr&uuml;hzeitigen Erkennung m&ouml;glicher Ver&auml;nderungen &ndash; erg&auml;nzend zur regul&auml;ren Vorsorge.</p>
       </div>
 
-      <div class="l-card" data-aos="fade-up" data-aos-duration="900" data-aos-easing="ease-out-quad" data-aos-delay="700">
-                <div class="l-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#16653f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      <div class="acc-item" data-aos="fade-up" data-aos-duration="900" data-aos-easing="ease-out-quad" data-aos-delay="360">
+        <button class="acc-hdr" type="button" id="accHdr6" aria-expanded="false" aria-controls="accPanel6" onclick="toggleAcc(this)">
+          <span class="acc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#16653f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></span>
+          <span class="acc-titles">
+            <span class="acc-badge">GKV &amp; IGeL-Leistung</span>
+          <span class="acc-title">Kardiologische Untersuchungen</span>
+          </span>
+          <svg class="acc-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16653f" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="acc-panel" id="accPanel6" role="region" aria-labelledby="accHdr6">
+          <div class="acc-body">
+            <p>Wir bieten Ruhe-EKG, Langzeit-EKG (24h), Langzeit-Blutdruckmessung sowie Ergometrie &ndash; als Kassenleistung bei medizinischer Indikation oder als IGeL-Leistung. Zur Abkl&auml;rung und Vorsorge von Herz-Kreislauf-Erkrankungen.</p>
+          </div>
         </div>
-        <div class="l-igel">GKV &amp; IGeL-Leistung</div>
-        <div class="l-title">Kardiologische Untersuchungen</div>
-        <p class="l-desc">Wir bieten Ruhe-EKG, Langzeit-EKG (24h), Langzeit-Blutdruckmessung sowie Ergometrie &ndash; als Kassenleistung bei medizinischer Indikation oder als IGeL-Leistung. Zur Abkl&auml;rung und Vorsorge von Herz-Kreislauf-Erkrankungen.</p>
       </div>
 
     </div>
@@ -681,6 +742,23 @@ function toggleMenu(){
 }
 navLinks.forEach(function(a){a.addEventListener('click',function(){if(open)toggleMenu()})});
 document.addEventListener('click',function(e){if(open&&!e.target.closest('nav'))toggleMenu()});
+
+function toggleAcc(btn){
+  var item=btn.parentNode;
+  var panel=item.querySelector('.acc-panel');
+  var isOpen=item.classList.contains('open');
+  var openItems=document.querySelectorAll('.acc-item.open');
+  for(var i=0;i<openItems.length;i++){
+    openItems[i].classList.remove('open');
+    openItems[i].querySelector('.acc-panel').style.maxHeight='0px';
+    openItems[i].querySelector('.acc-hdr').setAttribute('aria-expanded','false');
+  }
+  if(!isOpen){
+    item.classList.add('open');
+    panel.style.maxHeight=panel.scrollHeight+'px';
+    btn.setAttribute('aria-expanded','true');
+  }
+}
 
 function loadMap(){
   var container=document.getElementById('mapContainer');
